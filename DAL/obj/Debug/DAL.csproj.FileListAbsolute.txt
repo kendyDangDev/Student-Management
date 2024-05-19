@@ -1,0 +1,12 @@
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\StudentManagerment_Project\DAL\bin\Debug\DAL.dll
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\StudentManagerment_Project\DAL\bin\Debug\DAL.pdb
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\StudentManagerment_Project\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\StudentManagerment_Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\StudentManagerment_Project\DAL\obj\Debug\DAL.dll
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\StudentManagerment_Project\DAL\obj\Debug\DAL.pdb
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\12522091_DoDangThang_12522W.2\DAL\bin\Debug\DAL.dll
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\12522091_DoDangThang_12522W.2\DAL\bin\Debug\DAL.pdb
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\12522091_DoDangThang_12522W.2\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\12522091_DoDangThang_12522W.2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\12522091_DoDangThang_12522W.2\DAL\obj\Debug\DAL.dll
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 3\C# Winform\Bài Tập Lớn\12522091_DoDangThang_12522W.2\DAL\obj\Debug\DAL.pdb
