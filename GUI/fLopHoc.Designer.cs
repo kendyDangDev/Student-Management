@@ -413,6 +413,6 @@
         private System.Windows.Forms.ComboBox comboBoxHDT;
         private System.Windows.Forms.ComboBox comboBoxGVCN;
         private System.Windows.Forms.Label labelGVCN;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }

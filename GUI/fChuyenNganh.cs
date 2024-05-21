@@ -15,6 +15,18 @@ namespace GUI
 {
     public partial class fChuyenNganh : Form
     {
+        private static fChuyenNganh _instance;
+        public static fChuyenNganh Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fChuyenNganh();
+                }
+                return _instance;
+            }
+        }
         public fChuyenNganh()
         {
             InitializeComponent();

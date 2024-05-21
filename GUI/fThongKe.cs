@@ -16,6 +16,18 @@ namespace GUI
 {
     public partial class fThongKe : Form
     {
+        private static fThongKe _instance;
+        public static fThongKe Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fThongKe();
+                }
+                return _instance;
+            }
+        }
         static string connectionString = @"Data Source=localhost;
                                                 Initial Catalog=UTEHY
                                                 ;User ID=sa;Password=Kendydang19082004";

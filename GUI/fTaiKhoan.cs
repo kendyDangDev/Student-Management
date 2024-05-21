@@ -14,6 +14,18 @@ namespace GUI
 {
     public partial class fTaiKhoan : Form
     {
+        private static fTaiKhoan _instance;
+        public static fTaiKhoan Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fTaiKhoan();
+                }
+                return _instance;
+            }
+        }
         public fTaiKhoan()
         {
             InitializeComponent();

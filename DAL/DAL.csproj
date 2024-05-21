@@ -57,6 +57,7 @@
     <Compile Include="DALSubject.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DALStudent.cs" />
+    <Compile Include="DataTableHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

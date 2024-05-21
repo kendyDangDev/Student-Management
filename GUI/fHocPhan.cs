@@ -14,6 +14,18 @@ namespace GUI
 {
     public partial class fHocPhan : Form
     {
+        private static fHocPhan _instance;
+        public static fHocPhan Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fHocPhan();
+                }
+                return _instance;
+            }
+        }
         public fHocPhan()
         {
             InitializeComponent();

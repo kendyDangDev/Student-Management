@@ -631,6 +631,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxSearchClass;
         private System.Windows.Forms.Label labelID;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }

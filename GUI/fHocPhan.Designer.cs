@@ -503,6 +503,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownSoTC;
         private System.Windows.Forms.Label labelLoaiHP;
         private System.Windows.Forms.ComboBox comboBoxLoaiHP;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }

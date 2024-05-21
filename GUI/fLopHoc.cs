@@ -14,6 +14,19 @@ namespace GUI
 {
     public partial class fLopHoc : Form
     {
+        private static fLopHoc _instance;
+        public static fLopHoc Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fLopHoc();
+                }
+                return _instance;
+            }
+        }
+
         public fLopHoc()
         {
             InitializeComponent();

@@ -15,6 +15,18 @@ namespace GUI
 {
     public partial class fKhoa : Form
     {
+        private static fKhoa _instance;
+        public static fKhoa Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fKhoa();
+                }
+                return _instance;
+            }
+        }
         public fKhoa()
         {
             InitializeComponent();

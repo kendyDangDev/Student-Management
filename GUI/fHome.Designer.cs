@@ -42,10 +42,12 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panelAccount = new System.Windows.Forms.Panel();
+            this.buttonExport = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.PictureBoxLogo = new GUI.UserControls.KDCircularPictureBox();
             this.labelUserName = new System.Windows.Forms.Label();
             this.labelPermission = new System.Windows.Forms.Label();
             this.flowLayoutPaneSideMenu = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,20 +62,17 @@
             this.panelContent = new System.Windows.Forms.Panel();
             this.pictureBoxContent = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.PictureBoxLogoAccount = new GUI.UserControls.KDCircularPictureBox();
-            this.PictureBoxLogo = new GUI.UserControls.KDCircularPictureBox();
             this.flowLayoutPanelHoSo.SuspendLayout();
             this.flowLayoutPanelQuanLy.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelTitle.SuspendLayout();
             this.panelAccount.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).BeginInit();
             this.flowLayoutPaneSideMenu.SuspendLayout();
             this.flowLayoutPanelHocTap.SuspendLayout();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoAccount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanelHoSo
@@ -279,23 +278,42 @@
             // panelAccount
             // 
             this.panelAccount.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panelAccount.Controls.Add(this.buttonExport);
             this.panelAccount.Controls.Add(this.iconButton1);
-            this.panelAccount.Controls.Add(this.PictureBoxLogoAccount);
-            this.panelAccount.Location = new System.Drawing.Point(1129, 0);
+            this.panelAccount.Location = new System.Drawing.Point(1105, 0);
             this.panelAccount.Name = "panelAccount";
-            this.panelAccount.Size = new System.Drawing.Size(257, 80);
+            this.panelAccount.Size = new System.Drawing.Size(281, 80);
             this.panelAccount.TabIndex = 4;
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExport.ForeColor = System.Drawing.Color.Green;
+            this.buttonExport.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.buttonExport.IconColor = System.Drawing.Color.Green;
+            this.buttonExport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonExport.IconSize = 32;
+            this.buttonExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonExport.Location = new System.Drawing.Point(121, 16);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(74, 50);
+            this.buttonExport.TabIndex = 6;
+            this.buttonExport.Text = "Xuất Excel";
+            this.buttonExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // iconButton1
             // 
             this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.ForeColor = System.Drawing.Color.Red;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconColor = System.Drawing.Color.Red;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(166, 14);
+            this.iconButton1.Location = new System.Drawing.Point(201, 16);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(84, 54);
+            this.iconButton1.Size = new System.Drawing.Size(80, 50);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Đăng Xuất";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -337,6 +355,23 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(117, 2);
             this.guna2GradientPanel1.TabIndex = 5;
+            // 
+            // PictureBoxLogo
+            // 
+            this.PictureBoxLogo.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.PictureBoxLogo.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.PictureBoxLogo.BorderColor2 = System.Drawing.Color.HotPink;
+            this.PictureBoxLogo.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.PictureBoxLogo.BorderSize = 2;
+            this.PictureBoxLogo.GradientAngle = 50F;
+            this.PictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxLogo.Image")));
+            this.PictureBoxLogo.Location = new System.Drawing.Point(7, 9);
+            this.PictureBoxLogo.Name = "PictureBoxLogo";
+            this.PictureBoxLogo.Size = new System.Drawing.Size(62, 62);
+            this.PictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBoxLogo.TabIndex = 0;
+            this.PictureBoxLogo.TabStop = false;
+            this.PictureBoxLogo.Click += new System.EventHandler(this.kdCircularPictureBox1_Click);
             // 
             // labelUserName
             // 
@@ -575,7 +610,7 @@
             // 
             this.pictureBoxContent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxContent.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pictureBoxContent.Image = global::GUI.Properties.Resources.p1;
+            this.pictureBoxContent.Image = global::GUI.Properties.Resources._2;
             this.pictureBoxContent.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxContent.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxContent.Name = "pictureBoxContent";
@@ -590,39 +625,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 2222;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // PictureBoxLogoAccount
-            // 
-            this.PictureBoxLogoAccount.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.PictureBoxLogoAccount.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.PictureBoxLogoAccount.BorderColor2 = System.Drawing.Color.HotPink;
-            this.PictureBoxLogoAccount.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.PictureBoxLogoAccount.BorderSize = 2;
-            this.PictureBoxLogoAccount.GradientAngle = 50F;
-            this.PictureBoxLogoAccount.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxLogoAccount.Image")));
-            this.PictureBoxLogoAccount.Location = new System.Drawing.Point(98, 11);
-            this.PictureBoxLogoAccount.Name = "PictureBoxLogoAccount";
-            this.PictureBoxLogoAccount.Size = new System.Drawing.Size(62, 62);
-            this.PictureBoxLogoAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBoxLogoAccount.TabIndex = 2;
-            this.PictureBoxLogoAccount.TabStop = false;
-            // 
-            // PictureBoxLogo
-            // 
-            this.PictureBoxLogo.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.PictureBoxLogo.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.PictureBoxLogo.BorderColor2 = System.Drawing.Color.HotPink;
-            this.PictureBoxLogo.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.PictureBoxLogo.BorderSize = 2;
-            this.PictureBoxLogo.GradientAngle = 50F;
-            this.PictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxLogo.Image")));
-            this.PictureBoxLogo.Location = new System.Drawing.Point(7, 9);
-            this.PictureBoxLogo.Name = "PictureBoxLogo";
-            this.PictureBoxLogo.Size = new System.Drawing.Size(62, 62);
-            this.PictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBoxLogo.TabIndex = 0;
-            this.PictureBoxLogo.TabStop = false;
-            this.PictureBoxLogo.Click += new System.EventHandler(this.kdCircularPictureBox1_Click);
             // 
             // fHome
             // 
@@ -649,12 +651,11 @@
             this.panelTitle.PerformLayout();
             this.panelAccount.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).EndInit();
             this.flowLayoutPaneSideMenu.ResumeLayout(false);
             this.flowLayoutPanelHocTap.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoAccount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -678,7 +679,6 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelTitle;
-        private UserControls.KDCircularPictureBox PictureBoxLogoAccount;
         private System.Windows.Forms.Panel panelAccount;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton ButtonLopHoc;
@@ -692,5 +692,6 @@
         internal UserControls.KDCircularPictureBox PictureBoxLogo;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        public FontAwesome.Sharp.IconButton buttonExport;
     }
 }

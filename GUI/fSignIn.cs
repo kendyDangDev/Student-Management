@@ -21,8 +21,6 @@ namespace GUI
         {
             InitializeComponent();
             textBoxUserName.Focus();
-            textBoxPassword.Text = "admin";
-            textBoxUserName.Text = "admin";
         }
 
         private void linkLabelForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

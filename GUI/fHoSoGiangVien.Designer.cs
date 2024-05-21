@@ -35,7 +35,6 @@
             this.comboBoxTrinhDo = new System.Windows.Forms.ComboBox();
             this.labelTrinhDo = new System.Windows.Forms.Label();
             this.comboBoxKhoa = new System.Windows.Forms.ComboBox();
-            this.TimePickerNgaySinh = new GUI.UserControls.KDDateTimePicker();
             this.comboBoxGioiTinh = new System.Windows.Forms.ComboBox();
             this.labelNgaySinh = new System.Windows.Forms.Label();
             this.labelKhoa = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.TimePickerNgaySinh = new GUI.UserControls.KDDateTimePicker();
             this.groupBoxThongTinGV.SuspendLayout();
             this.groupBoxFunctions.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
@@ -145,23 +145,6 @@
             this.comboBoxKhoa.Size = new System.Drawing.Size(144, 27);
             this.comboBoxKhoa.TabIndex = 6;
             this.comboBoxKhoa.SelectedIndexChanged += new System.EventHandler(this.comboBoxKhoa_SelectedIndexChanged);
-            // 
-            // TimePickerNgaySinh
-            // 
-            this.TimePickerNgaySinh.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.TimePickerNgaySinh.BorderSize = 0;
-            this.TimePickerNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TimePickerNgaySinh.Location = new System.Drawing.Point(135, 152);
-            this.TimePickerNgaySinh.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
-            this.TimePickerNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.TimePickerNgaySinh.MinimumSize = new System.Drawing.Size(0, 35);
-            this.TimePickerNgaySinh.Name = "TimePickerNgaySinh";
-            this.TimePickerNgaySinh.Size = new System.Drawing.Size(144, 35);
-            this.TimePickerNgaySinh.SkinColor = System.Drawing.Color.White;
-            this.TimePickerNgaySinh.TabIndex = 5;
-            this.TimePickerNgaySinh.TextColor = System.Drawing.Color.Black;
-            this.TimePickerNgaySinh.Value = new System.DateTime(2004, 8, 19, 0, 0, 0, 0);
             // 
             // comboBoxGioiTinh
             // 
@@ -502,9 +485,8 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
             this.dataGridViewContent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewContent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(145)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
@@ -611,6 +593,23 @@
             this.panel3.Size = new System.Drawing.Size(958, 588);
             this.panel3.TabIndex = 13;
             // 
+            // TimePickerNgaySinh
+            // 
+            this.TimePickerNgaySinh.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.TimePickerNgaySinh.BorderSize = 0;
+            this.TimePickerNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimePickerNgaySinh.Location = new System.Drawing.Point(135, 152);
+            this.TimePickerNgaySinh.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
+            this.TimePickerNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.TimePickerNgaySinh.MinimumSize = new System.Drawing.Size(0, 35);
+            this.TimePickerNgaySinh.Name = "TimePickerNgaySinh";
+            this.TimePickerNgaySinh.Size = new System.Drawing.Size(144, 35);
+            this.TimePickerNgaySinh.SkinColor = System.Drawing.Color.White;
+            this.TimePickerNgaySinh.TabIndex = 5;
+            this.TimePickerNgaySinh.TextColor = System.Drawing.Color.Black;
+            this.TimePickerNgaySinh.Value = new System.DateTime(2004, 8, 19, 0, 0, 0, 0);
+            // 
             // fHoSoGiangVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -675,10 +674,10 @@
         private System.Windows.Forms.TextBox textBoxValue;
         private System.Windows.Forms.ComboBox comboBoxTrinhDo;
         private System.Windows.Forms.Label labelTrinhDo;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }

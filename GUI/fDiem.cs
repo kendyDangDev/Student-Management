@@ -13,6 +13,18 @@ namespace GUI
 {
     public partial class fDiem : Form
     {
+        private static fDiem _instance;
+        public static fDiem Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fDiem();
+                }
+                return _instance;
+            }
+        }
         public fDiem()
         {
             InitializeComponent();

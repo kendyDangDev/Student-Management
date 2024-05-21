@@ -881,6 +881,6 @@
         private UserControls.KDDateTimePicker TimePickerBirthday;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }

@@ -471,6 +471,6 @@
         private FontAwesome.Sharp.IconButton ButtonUpdate;
         private System.Windows.Forms.Label labelTGDT;
         private System.Windows.Forms.TextBox textBoxTGDT;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }

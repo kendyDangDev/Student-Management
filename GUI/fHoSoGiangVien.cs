@@ -17,6 +17,18 @@ namespace GUI
 {
     public partial class fHoSoGiangVien : Form
     {
+        private static fHoSoGiangVien _instance;
+        public static fHoSoGiangVien Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fHoSoGiangVien();
+                }
+                return _instance;
+            }
+        }
         public fHoSoGiangVien()
         {
             InitializeComponent();

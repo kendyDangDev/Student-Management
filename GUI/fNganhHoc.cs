@@ -13,6 +13,18 @@ namespace GUI
 {
     public partial class fNganhHoc : Form
     {
+        private static fNganhHoc _instance;
+        public static fNganhHoc Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fNganhHoc();
+                }
+                return _instance;
+            }
+        }
         public fNganhHoc()
         {
             InitializeComponent();

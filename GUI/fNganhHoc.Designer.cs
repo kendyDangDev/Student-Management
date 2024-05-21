@@ -447,6 +447,6 @@
         private System.Windows.Forms.ComboBox comboBoxValue;
         private System.Windows.Forms.ComboBox comboBoxColumn;
         private FontAwesome.Sharp.IconButton ButtonSearch;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }

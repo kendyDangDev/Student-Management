@@ -541,6 +541,6 @@
         private FontAwesome.Sharp.IconButton ButtonUpdate;
         private System.Windows.Forms.TextBox textBoxGHP;
         private System.Windows.Forms.Label labelGHP;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }

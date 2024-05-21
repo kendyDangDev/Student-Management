@@ -15,6 +15,18 @@ namespace GUI
 {
     public partial class fLichHoc : Form
     {
+        private static fLichHoc _instance;
+        public static fLichHoc Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new fLichHoc();
+                }
+                return _instance;
+            }
+        }
 
         public fLichHoc()
         {

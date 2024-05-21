@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 //using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Shell;
+using GemBox.Spreadsheet;
 
 namespace GUI
 {
@@ -104,7 +105,7 @@ namespace GUI
             openChildFormInPanel(new fHoSoSinhVien());
             PictureBoxLogo.Enabled = false;
 
-         
+
         }
 
         private void ButtonGiangVien_Click(object sender, EventArgs e)
@@ -112,7 +113,7 @@ namespace GUI
             labelTitle.Text = ButtonHoSo.Text + " " + ButtonGiangVien.Text;
             CenterLabel(labelTitle);
             openChildFormInPanel(new fHoSoGiangVien());
-       
+
         }
 
         private void ButtonQuanLy_MouseEnter(object sender, EventArgs e)
@@ -412,7 +413,7 @@ namespace GUI
             Image.FromFile("1.jpg"),
             Image.FromFile("2.jpg"),
             Image.FromFile("3.jpg"),
-          
+
         };
 
             currentImageIndex = 0;
@@ -437,5 +438,113 @@ namespace GUI
         {
 
         }
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            Form latestForm = FormHelper.GetLatestOpenedForm();
+            string currentForm = latestForm.Name;
+            string title;
+            switch (currentForm)
+            {
+                case "fHoSoSinhVien":
+                    title = "DANH SÁCH SINH VIÊN TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+                    ExportExcel((DataTable)fHoSoSinhVien.Instance.dataGridViewContent.DataSource, title, 4);
+                    break;
+                case "fHoSoGiangVien":
+                    title = "DANH SÁCH GIẢNG VIÊN TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+                    ExportExcel((DataTable)fHoSoGiangVien.Instance.dataGridViewContent.DataSource, title);
+
+                    break;
+                case "fDiem":
+                    title = "KẾT QUẢ HỌC TẬP SINH VIÊN TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+                    ExportExcel((DataTable)fDiem.Instance.dataGridViewContent.DataSource, title);
+
+                    break;
+                case "fHocPhan":
+                    title = "DANH SÁCH HỌC PHẦN TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+                    ExportExcel((DataTable)fHocPhan.Instance.dataGridViewContent.DataSource, title);
+
+                    break;
+                case "fKhoa":
+                    title = "DANH SÁCH KHOA TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+                    ExportExcel((DataTable)fKhoa.Instance.dataGridViewContent.DataSource, title);
+
+                    break;
+                case "fLichHoc":
+                    title = "LỊCH HỌC";
+                    break;
+                case "fLopHoc":
+                    title = "DANH SÁCH LỚP HỌC TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+                    ExportExcel((DataTable)fLopHoc.Instance.dataGridViewContent.DataSource, title);
+
+                    break;
+                case "fNganhHoc":
+                    title = "DANH SÁCH NGÀNH HỌC TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+                    ExportExcel((DataTable)fNganhHoc.Instance.dataGridViewContent.DataSource, title);
+                    break;
+                case "fChuyenNganh":
+                    title = "DANH SÁCH NGÀNH HỌC TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+                    ExportExcel((DataTable)fChuyenNganh.Instance.dataGridViewContent.DataSource, title);
+                    break;
+                case "fThongKe":
+                    buttonExport.Enabled = false;
+                    break;
+                case "fTaiKhoan":
+                    buttonExport.Enabled =false;    
+                    break;
+                default:
+                    title = "";
+                    break;
+            }
+
+        }
+        void ExportExcel (DataTable data, string title, int n = 0)
+        {
+            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
+            var workbook = new ExcelFile();
+            var worksheet = workbook.Worksheets.Add("DataTable to Sheet");
+
+            var dataTable = data;
+
+            worksheet.Cells[0, n].Value = "TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
+            worksheet.Cells[0, n].Style.Font.Weight = ExcelFont.BoldWeight;
+            worksheet.Cells[1, n+1].Value = "PHÒNG ĐÀO TẠO";
+            worksheet.Cells[0, n+7].Value = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM";
+            worksheet.Cells[0, n+7].Style.Font.Weight = ExcelFont.BoldWeight;
+            worksheet.Cells[1, n+8].Value = "Độc lập - Tự do - Hạnh phúc";
+
+            var cells = worksheet.Cells[3, n+1];
+            cells.Value = title;
+            cells.Style.Font.Weight = ExcelFont.BoldWeight;
+            cells.Style.Font.Size = 13 * 20;
+
+            worksheet.InsertDataTable(dataTable,
+                new InsertDataTableOptions()
+                {
+                    ColumnHeaders = true,
+                    StartRow = 5
+                    
+                });
+
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Tệp Excel|*.xlsx";
+                saveFileDialog.Title = "Lưu tệp Excel";
+                saveFileDialog.FileName = "TenFile.xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.Save(saveFileDialog.FileName);
+                }
+            }
+        }
     }
+    public static class FormHelper
+    {
+        public static Form GetLatestOpenedForm()
+        {
+            return Application.OpenForms.Cast<Form>().LastOrDefault();
+        }
+    }
+
 }
