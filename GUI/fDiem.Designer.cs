@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.labelTotalPages = new System.Windows.Forms.Label();
             this.labelCurrentPage = new System.Windows.Forms.Label();
@@ -53,13 +53,16 @@
             this.textBoxKTHP = new System.Windows.Forms.TextBox();
             this.labelKTHP = new System.Windows.Forms.Label();
             this.labelMonHoc = new System.Windows.Forms.Label();
-            this.textBoxMaSV = new System.Windows.Forms.TextBox();
             this.labelMaSV = new System.Windows.Forms.Label();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
             this.comboBoxValueSearch = new System.Windows.Forms.ComboBox();
             this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.ButtonSearch = new FontAwesome.Sharp.IconButton();
             this.dataGridViewContent = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
+            this.labelLop = new System.Windows.Forms.Label();
+            this.comboBoxSinhVien = new System.Windows.Forms.ComboBox();
+            this.comboBoxLop = new System.Windows.Forms.ComboBox();
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -165,6 +168,7 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(428, 731);
             this.panelHeader.TabIndex = 3;
+            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // ButtonDel
             // 
@@ -174,7 +178,7 @@
             this.ButtonDel.IconColor = System.Drawing.Color.Black;
             this.ButtonDel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButtonDel.IconSize = 35;
-            this.ButtonDel.Location = new System.Drawing.Point(286, 233);
+            this.ButtonDel.Location = new System.Drawing.Point(286, 271);
             this.ButtonDel.Name = "ButtonDel";
             this.ButtonDel.Size = new System.Drawing.Size(120, 45);
             this.ButtonDel.TabIndex = 9;
@@ -190,9 +194,9 @@
             this.groupBox2.Controls.Add(this.comboBoxDiem);
             this.groupBox2.Controls.Add(this.ButtonSort);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(45, 519);
+            this.groupBox2.Location = new System.Drawing.Point(45, 545);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(325, 213);
+            this.groupBox2.Size = new System.Drawing.Size(325, 187);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sắp Xếp";
@@ -204,7 +208,7 @@
             this.comboBoxSort.Items.AddRange(new object[] {
             "Tăng Dần",
             "Giảm Dần"});
-            this.comboBoxSort.Location = new System.Drawing.Point(68, 82);
+            this.comboBoxSort.Location = new System.Drawing.Point(68, 78);
             this.comboBoxSort.Name = "comboBoxSort";
             this.comboBoxSort.Size = new System.Drawing.Size(180, 29);
             this.comboBoxSort.TabIndex = 6;
@@ -214,7 +218,7 @@
             // 
             this.comboBoxDiem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDiem.FormattingEnabled = true;
-            this.comboBoxDiem.Location = new System.Drawing.Point(68, 46);
+            this.comboBoxDiem.Location = new System.Drawing.Point(68, 42);
             this.comboBoxDiem.Name = "comboBoxDiem";
             this.comboBoxDiem.Size = new System.Drawing.Size(180, 29);
             this.comboBoxDiem.TabIndex = 6;
@@ -226,7 +230,7 @@
             this.ButtonSort.IconColor = System.Drawing.Color.Black;
             this.ButtonSort.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButtonSort.IconSize = 45;
-            this.ButtonSort.Location = new System.Drawing.Point(68, 122);
+            this.ButtonSort.Location = new System.Drawing.Point(68, 118);
             this.ButtonSort.Name = "ButtonSort";
             this.ButtonSort.Size = new System.Drawing.Size(180, 45);
             this.ButtonSort.TabIndex = 3;
@@ -244,7 +248,7 @@
             this.ButtonUpdate.IconColor = System.Drawing.Color.Black;
             this.ButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButtonUpdate.IconSize = 35;
-            this.ButtonUpdate.Location = new System.Drawing.Point(151, 233);
+            this.ButtonUpdate.Location = new System.Drawing.Point(151, 271);
             this.ButtonUpdate.Name = "ButtonUpdate";
             this.ButtonUpdate.Size = new System.Drawing.Size(120, 45);
             this.ButtonUpdate.TabIndex = 8;
@@ -262,7 +266,7 @@
             this.ButtonAdd.IconColor = System.Drawing.Color.Black;
             this.ButtonAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButtonAdd.IconSize = 35;
-            this.ButtonAdd.Location = new System.Drawing.Point(15, 233);
+            this.ButtonAdd.Location = new System.Drawing.Point(15, 271);
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(120, 45);
             this.ButtonAdd.TabIndex = 7;
@@ -274,25 +278,27 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxLop);
+            this.groupBox1.Controls.Add(this.comboBoxSinhVien);
             this.groupBox1.Controls.Add(this.textBoxGHP);
             this.groupBox1.Controls.Add(this.labelGHP);
             this.groupBox1.Controls.Add(this.comboBoxMonHoc);
             this.groupBox1.Controls.Add(this.textBoxKTHP);
             this.groupBox1.Controls.Add(this.labelKTHP);
             this.groupBox1.Controls.Add(this.labelMonHoc);
-            this.groupBox1.Controls.Add(this.textBoxMaSV);
+            this.groupBox1.Controls.Add(this.labelLop);
             this.groupBox1.Controls.Add(this.labelMaSV);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(45, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 196);
+            this.groupBox1.Size = new System.Drawing.Size(325, 233);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập Điểm";
             // 
             // textBoxGHP
             // 
-            this.textBoxGHP.Location = new System.Drawing.Point(130, 113);
+            this.textBoxGHP.Location = new System.Drawing.Point(130, 146);
             this.textBoxGHP.Name = "textBoxGHP";
             this.textBoxGHP.Size = new System.Drawing.Size(144, 26);
             this.textBoxGHP.TabIndex = 8;
@@ -300,7 +306,7 @@
             // labelGHP
             // 
             this.labelGHP.AutoSize = true;
-            this.labelGHP.Location = new System.Drawing.Point(16, 116);
+            this.labelGHP.Location = new System.Drawing.Point(16, 149);
             this.labelGHP.Name = "labelGHP";
             this.labelGHP.Size = new System.Drawing.Size(79, 19);
             this.labelGHP.TabIndex = 7;
@@ -314,7 +320,7 @@
             this.comboBoxMonHoc.FormattingEnabled = true;
             this.comboBoxMonHoc.IntegralHeight = false;
             this.comboBoxMonHoc.ItemHeight = 21;
-            this.comboBoxMonHoc.Location = new System.Drawing.Point(130, 71);
+            this.comboBoxMonHoc.Location = new System.Drawing.Point(130, 104);
             this.comboBoxMonHoc.Name = "comboBoxMonHoc";
             this.comboBoxMonHoc.Size = new System.Drawing.Size(144, 29);
             this.comboBoxMonHoc.TabIndex = 6;
@@ -322,7 +328,7 @@
             // 
             // textBoxKTHP
             // 
-            this.textBoxKTHP.Location = new System.Drawing.Point(130, 154);
+            this.textBoxKTHP.Location = new System.Drawing.Point(130, 187);
             this.textBoxKTHP.Name = "textBoxKTHP";
             this.textBoxKTHP.Size = new System.Drawing.Size(144, 26);
             this.textBoxKTHP.TabIndex = 3;
@@ -330,7 +336,7 @@
             // labelKTHP
             // 
             this.labelKTHP.AutoSize = true;
-            this.labelKTHP.Location = new System.Drawing.Point(16, 157);
+            this.labelKTHP.Location = new System.Drawing.Point(16, 190);
             this.labelKTHP.Name = "labelKTHP";
             this.labelKTHP.Size = new System.Drawing.Size(112, 19);
             this.labelKTHP.TabIndex = 2;
@@ -340,28 +346,21 @@
             // labelMonHoc
             // 
             this.labelMonHoc.AutoSize = true;
-            this.labelMonHoc.Location = new System.Drawing.Point(16, 75);
+            this.labelMonHoc.Location = new System.Drawing.Point(16, 108);
             this.labelMonHoc.Name = "labelMonHoc";
             this.labelMonHoc.Size = new System.Drawing.Size(72, 19);
             this.labelMonHoc.TabIndex = 2;
             this.labelMonHoc.Text = "Học Phần:";
             this.labelMonHoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBoxMaSV
-            // 
-            this.textBoxMaSV.Location = new System.Drawing.Point(130, 35);
-            this.textBoxMaSV.Name = "textBoxMaSV";
-            this.textBoxMaSV.Size = new System.Drawing.Size(144, 26);
-            this.textBoxMaSV.TabIndex = 3;
-            // 
             // labelMaSV
             // 
             this.labelMaSV.AutoSize = true;
-            this.labelMaSV.Location = new System.Drawing.Point(16, 38);
+            this.labelMaSV.Location = new System.Drawing.Point(16, 71);
             this.labelMaSV.Name = "labelMaSV";
-            this.labelMaSV.Size = new System.Drawing.Size(56, 19);
+            this.labelMaSV.Size = new System.Drawing.Size(69, 19);
             this.labelMaSV.TabIndex = 2;
-            this.labelMaSV.Text = "Mã SV:";
+            this.labelMaSV.Text = "Sinh Viên:";
             this.labelMaSV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBoxSearch
@@ -370,7 +369,7 @@
             this.groupBoxSearch.Controls.Add(this.comboBoxSearch);
             this.groupBoxSearch.Controls.Add(this.ButtonSearch);
             this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSearch.Location = new System.Drawing.Point(45, 304);
+            this.groupBoxSearch.Location = new System.Drawing.Point(45, 337);
             this.groupBoxSearch.Name = "groupBoxSearch";
             this.groupBoxSearch.Size = new System.Drawing.Size(325, 186);
             this.groupBoxSearch.TabIndex = 2;
@@ -426,26 +425,26 @@
             // 
             // dataGridViewContent
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.dataGridViewContent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewContent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.dataGridViewContent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewContent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewContent.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewContent.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewContent.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewContent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
             this.dataGridViewContent.Location = new System.Drawing.Point(428, 0);
@@ -487,6 +486,45 @@
             this.dataGridViewContent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellClick_1);
             this.dataGridViewContent.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellMouseEnter);
             this.dataGridViewContent.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellMouseLeave);
+            // 
+            // iconSplitButton1
+            // 
+            this.iconSplitButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconSplitButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconSplitButton1.IconColor = System.Drawing.Color.Black;
+            this.iconSplitButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconSplitButton1.IconSize = 48;
+            this.iconSplitButton1.Name = "iconSplitButton1";
+            this.iconSplitButton1.Rotation = 0D;
+            this.iconSplitButton1.Size = new System.Drawing.Size(23, 23);
+            this.iconSplitButton1.Text = "iconSplitButton1";
+            // 
+            // labelLop
+            // 
+            this.labelLop.AutoSize = true;
+            this.labelLop.Location = new System.Drawing.Point(16, 39);
+            this.labelLop.Name = "labelLop";
+            this.labelLop.Size = new System.Drawing.Size(37, 19);
+            this.labelLop.TabIndex = 2;
+            this.labelLop.Text = "Lớp:";
+            this.labelLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // comboBoxSinhVien
+            // 
+            this.comboBoxSinhVien.FormattingEnabled = true;
+            this.comboBoxSinhVien.Location = new System.Drawing.Point(130, 68);
+            this.comboBoxSinhVien.Name = "comboBoxSinhVien";
+            this.comboBoxSinhVien.Size = new System.Drawing.Size(144, 27);
+            this.comboBoxSinhVien.TabIndex = 9;
+            // 
+            // comboBoxLop
+            // 
+            this.comboBoxLop.FormattingEnabled = true;
+            this.comboBoxLop.Location = new System.Drawing.Point(130, 31);
+            this.comboBoxLop.Name = "comboBoxLop";
+            this.comboBoxLop.Size = new System.Drawing.Size(144, 27);
+            this.comboBoxLop.TabIndex = 10;
+            this.comboBoxLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxLop_SelectedIndexChanged);
             // 
             // fDiem
             // 
@@ -530,7 +568,6 @@
         private System.Windows.Forms.TextBox textBoxKTHP;
         private System.Windows.Forms.Label labelKTHP;
         private System.Windows.Forms.Label labelMonHoc;
-        private System.Windows.Forms.TextBox textBoxMaSV;
         private System.Windows.Forms.Label labelMaSV;
         private System.Windows.Forms.GroupBox groupBoxSearch;
         private System.Windows.Forms.ComboBox comboBoxValueSearch;
@@ -542,5 +579,9 @@
         private System.Windows.Forms.TextBox textBoxGHP;
         private System.Windows.Forms.Label labelGHP;
         public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
+        private System.Windows.Forms.Label labelLop;
+        private FontAwesome.Sharp.IconSplitButton iconSplitButton1;
+        private System.Windows.Forms.ComboBox comboBoxLop;
+        private System.Windows.Forms.ComboBox comboBoxSinhVien;
     }
 }

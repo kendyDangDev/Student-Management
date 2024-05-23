@@ -182,7 +182,7 @@ namespace BUS
 
         public string GetMalopByMaSV(string maSV)
         {
-            if(DALStudent.Instance.GetMalopByMaSV(maSV).Rows.Count > 0)
+            if (DALStudent.Instance.GetMalopByMaSV(maSV).Rows.Count > 0)
             {
                 return DALStudent.Instance.GetMalopByMaSV(maSV).Rows[0][0].ToString();
             }
@@ -191,6 +191,32 @@ namespace BUS
         public int SelectCount()
         {
             return int.Parse(DALStudent.Instance.selectCount().Rows[0][0].ToString());
+        }
+
+        public string GetIDByName(string name)
+        {
+            string result = "";
+            DataTable dataTable = DALStudent.Instance.GetIDByName(name);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                result = row[0].ToString();
+            }
+            return result;
+        }
+
+        public int GetNameStudentbyClass(ComboBox cbx, string malop)
+        {
+            List<string> classList = new List<string>();
+            DataTable dataTable = DALStudent.Instance.GetNameStudentByClass(malop);
+            foreach (DataRow row in dataTable.Rows)
+            {
+                classList.Add(row[0].ToString());
+            }
+            cbx.DataSource = classList;
+
+            return dataTable.Rows.Count;
+
         }
     }
 }

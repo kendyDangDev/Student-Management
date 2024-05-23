@@ -129,6 +129,18 @@ namespace DAL
             string query = "SELECT COUNT(*) FROM SinhVien";
             return DataProvider.Instance.ExecuteQuery(query);
         }
+
+        public DataTable GetIDByName(string name)
+        {
+            string query = "select masv from sinhvien where hoten = @name";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
+        }
+
+        public DataTable GetNameStudentByClass(string malop)
+        {
+            string query = "select hoten from sinhvien where malop = @malop";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { malop });
+        }
     }
 
 }

@@ -55,7 +55,7 @@ namespace DAL
         public DataTable GetPassword(string username, string phonenumber, string email)
         {
             string query = "USP_ForgotPassword @Username , @PhoneNumber , @email";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, phonenumber, email /*list*/});
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, phonenumber, email});
 
             return result;
         }

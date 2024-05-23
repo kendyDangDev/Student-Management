@@ -30,10 +30,24 @@ namespace GUI
             InitializeComponent();
             LoadAllSubject();
             LoadAllScore();
+            LoadAllClass();
         }
         public string type = fSignIn.accountType;
         public string username = fSignIn.userNameLogin;
 
+        public void LoadAllClass()
+        {
+            BUSClass.Instance.GetAllLopHoc(comboBoxLop);
+        }
+        public int LoadStudentsByClass()
+        {
+            string malop = comboBoxLop.Text;
+            if (comboBoxLop.SelectedIndex != -1)
+            {
+                malop = comboBoxLop.SelectedItem.ToString();
+            }
+            return BUSStudent.Instance.GetNameStudentbyClass(comboBoxSinhVien, malop);
+        }
 
         void LoadAllSubject()
         {
@@ -44,11 +58,11 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                BUSScore.Instance.GetScoreBymaSV(dataGridViewContent,username);
+                BUSScore.Instance.GetScoreBymaSV(dataGridViewContent, username);
             }
             else
             {
-            BUSScore.Instance.GetAllScore(dataGridViewContent);
+                BUSScore.Instance.GetAllScore(dataGridViewContent);
 
             }
             //BUSScore.Instance.GetScoreBymaSV(dataGridViewContent, username);
@@ -93,7 +107,11 @@ namespace GUI
             }
             else
             {
-                string masv = textBoxMaSV.Text;
+                string tenSinhVien = comboBoxSinhVien.Text;
+                if (comboBoxSinhVien.SelectedIndex != -1)
+                {
+                    tenSinhVien = comboBoxSinhVien.SelectedItem.ToString();
+                }
                 string diemGHP = textBoxGHP.Text;
                 string diemKTHP = textBoxKTHP.Text;
                 string tenHocPhan = comboBoxMonHoc.Text;
@@ -103,13 +121,14 @@ namespace GUI
                 }
                 string maHocPhan = BUSSubject.Instance.GetIDByName(tenHocPhan);
 
-                if (!string.IsNullOrEmpty(masv) && !string.IsNullOrEmpty(diemGHP) && !string.IsNullOrEmpty(diemKTHP) && !string.IsNullOrEmpty(tenHocPhan))
+                if (!string.IsNullOrEmpty(tenSinhVien) && !string.IsNullOrEmpty(diemGHP) && !string.IsNullOrEmpty(diemKTHP) && !string.IsNullOrEmpty(tenHocPhan))
                 {
 
-                    string message = BUSScore.Instance.InsertScore(diemGHP, diemKTHP, masv, maHocPhan);
+                    string maSV = BUSStudent.Instance.GetIDByName(tenSinhVien);
+                    string message = BUSScore.Instance.InsertScore(diemGHP, diemKTHP, maSV, maHocPhan);
                     if (message == "")
                     {
-                        MessageBox.Show($"Nhập Điểm Cho Sinh Viên {masv} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Nhập Điểm Cho Sinh Viên {tenSinhVien} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSScore.Instance.GetAllScore(dataGridViewContent);
                     }
                     else
@@ -137,7 +156,11 @@ namespace GUI
             }
             else
             {
-                string masv = textBoxMaSV.Text;
+                string tenSinhVien = comboBoxSinhVien.Text;
+                if (comboBoxSinhVien.SelectedIndex != -1)
+                {
+                    tenSinhVien = comboBoxSinhVien.SelectedItem.ToString();
+                }
                 string diemGHP = textBoxGHP.Text;
                 string diemKTHP = textBoxKTHP.Text;
                 string tenHocPhan = comboBoxMonHoc.Text;
@@ -146,13 +169,14 @@ namespace GUI
                     tenHocPhan = comboBoxMonHoc.SelectedItem.ToString();
                 }
 
-                if (!string.IsNullOrEmpty(masv) && !string.IsNullOrEmpty(diemGHP) && !string.IsNullOrEmpty(diemKTHP) && !string.IsNullOrEmpty(tenHocPhan))
+                if (!string.IsNullOrEmpty(tenSinhVien) && !string.IsNullOrEmpty(diemGHP) && !string.IsNullOrEmpty(diemKTHP) && !string.IsNullOrEmpty(tenHocPhan))
                 {
                     string maHocPhan = BUSSubject.Instance.GetIDByName(tenHocPhan);
-                    string message = BUSScore.Instance.UpdateScore(diemGHP, diemKTHP, masv, maHocPhan);
+                    string maSV = BUSStudent.Instance.GetIDByName(tenSinhVien);
+                    string message = BUSScore.Instance.UpdateScore(diemGHP, diemKTHP, maSV, maHocPhan);
                     if (message == "")
                     {
-                        MessageBox.Show($"Cập Nhật Điểm Cho Sinh Viên {masv} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Cập Nhật Điểm Cho Sinh Viên {tenSinhVien} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSScore.Instance.GetAllScore(dataGridViewContent);
                     }
                     else
@@ -180,17 +204,23 @@ namespace GUI
             }
             else
             {
-                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                string tenSinhVien = comboBoxSinhVien.Text;
+                if (comboBoxSinhVien.SelectedIndex != -1)
+                {
+                    tenSinhVien = comboBoxSinhVien.SelectedItem.ToString();
+                }
+                string maSV = BUSStudent.Instance.GetIDByName(tenSinhVien);
+                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên: {tenSinhVien} Có Mã: {maSV}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (BUSScore.Instance.DeleteScore(GetSubjectIDByName(comboBoxMonHoc)) != 0)
                     {
-                        MessageBox.Show($"Xóa Thành Công Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Xóa Thành Công Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên:  {tenSinhVien}  Có Mã:  {maSV}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllScore();
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. Sinh Viên Chưa Có Điểm Môn Học Này: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"Thất Bại. Sinh Viên Chưa Có Điểm Môn Học Này.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -199,7 +229,7 @@ namespace GUI
 
         private void dataGridViewContent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
@@ -208,7 +238,7 @@ namespace GUI
             if (comboBoxSearch.SelectedIndex != -1)
             {
                 columnsearch = comboBoxSearch.SelectedItem.ToString();
-         
+
             }
             string valueSearch = comboBoxValueSearch.Text;
             if (comboBoxValueSearch.SelectedIndex != -1)
@@ -278,9 +308,9 @@ namespace GUI
 
         private void dataGridViewContent_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex != -1)
+            if (e.RowIndex != -1)
             {
-                textBoxMaSV.Text = dataGridViewContent.Rows[e.RowIndex].Cells[1].Value.ToString();
+                comboBoxSinhVien.Text = dataGridViewContent.Rows[e.RowIndex].Cells[1].Value.ToString();
                 comboBoxMonHoc.Text = dataGridViewContent.Rows[e.RowIndex].Cells[5].Value.ToString();
                 textBoxGHP.Text = dataGridViewContent.Rows[e.RowIndex].Cells[6].Value.ToString();
                 textBoxKTHP.Text = dataGridViewContent.Rows[e.RowIndex].Cells[7].Value.ToString();
@@ -305,6 +335,24 @@ namespace GUI
                 color = dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor;
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightSkyBlue;
 
+            }
+        }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBoxLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (LoadStudentsByClass() > 0)
+            {
+                LoadStudentsByClass();
+
+            }
+            else
+            {
+                comboBoxSinhVien.Text = "";
             }
         }
     }

@@ -51,7 +51,7 @@ namespace GUI
         //}
     void loadData()
         {
-            //BUSLecturer.Instance.GetAllGiangVien(dataGridViewContent);
+            BUSLecturer.Instance.GetAllGiangVien(guna2DataGridView1);
         }
 
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
@@ -75,6 +75,11 @@ namespace GUI
         }
 
         private void guna2HtmlLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -25,7 +25,6 @@ namespace GUI
             string phonenumber = TextBoxPhoneNumber.Texts;
             string email = TextBoxEmail.Texts;
 
-            string getPassword = BUSAccount.Instance.GetPassword(username, phonenumber, email);
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(phonenumber) || string.IsNullOrEmpty(email))
             {
                 MessageBox.Show("Vui Lòng Nhập Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -33,23 +32,25 @@ namespace GUI
             else
             {
                 string exist = BUSAccount.Instance.CheckExist(username);
-                if(exist == "")
+                if (exist == "")
                 {
+                    string getPassword = BUSAccount.Instance.GetPassword(username, phonenumber, email);
                     if (getPassword == "")
                     {
-                        MessageBox.Show("Số Điện Thoại Hoặc Địa Chỉ Email Không Hợp Lệ. Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Số Điện Thoại Hoặc Địa Chỉ Email Không Khớp Với Tài Khoản. Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     else
                     {
                         MessageBox.Show($"Mật Khẩu của bạn là: {getPassword}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        TextBoxUsername.Texts  = null;
+                        TextBoxPhoneNumber.Texts = null;
+                        TextBoxEmail.Texts = null;
                     }
                 }
                 else
                 {
-                        MessageBox.Show("Tài Khoản Không Tồn Tại. Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    MessageBox.Show("Tài Khoản Không Tồn Tại. Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }

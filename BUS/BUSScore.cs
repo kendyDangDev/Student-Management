@@ -65,7 +65,7 @@ namespace BUS
             }
             else
             {
-                return "Không Tồn Tại Sinh Viên Có Mã Này";
+                return "Sinh Viên Không Thuộc Lớp Này.";
             }
         }
 

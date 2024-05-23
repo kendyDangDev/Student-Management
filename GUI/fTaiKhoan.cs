@@ -51,25 +51,24 @@ namespace GUI
                 BUSAccount.Instance.GetAllAccount(dataGridViewContent);
             }
 
-            dataGridViewContent.DataBindingComplete += (sender, e) =>
-            {
-                DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
-                column.HeaderText = "STT";
-                dataGridViewContent.Columns.Insert(0, column);
+            //dataGridViewContent.DataBindingComplete += (sender, e) =>
+            //{
+            //    DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+            //    column.HeaderText = "STT";
+            //    dataGridViewContent.Columns.Insert(0, column);
 
-                for (int i = 0; i < dataGridViewContent.Rows.Count; i++)
-                {
-                    dataGridViewContent.Rows[i].Cells[0].Value = (i + 1).ToString();
-                }
-                dataGridViewContent.Columns.RemoveAt(1);
-
-            };
+            //    for (int i = 0; i < dataGridViewContent.Rows.Count; i++)
+            //    {
+            //        dataGridViewContent.Rows[i].Cells[0].Value = (i + 1).ToString();
+            //    }
+            //    dataGridViewContent.Columns.RemoveAt(1);
+            //};
             foreach (DataGridViewColumn column in dataGridViewContent.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
-
+              
         }
 
 
@@ -87,23 +86,28 @@ namespace GUI
             }
             else
             {
-                string username = textBoxUsername.Text;
+                string usernameTK = textBoxUsername.Text;
                 string accountType = comboBoxLoaiTk.Text;
                 if (comboBoxLoaiTk.SelectedIndex != -1)
                 {
                     accountType = comboBoxLoaiTk.SelectedItem.ToString();
                 }
 
-                if (string.IsNullOrEmpty(username))
+                if (string.IsNullOrEmpty(usernameTK))
                 {
                     MessageBox.Show("Vui Lòng Nhập Tài Khoản Cần Cấp Quyền.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    string message = BUSAccount.Instance.GrantPermission(username, accountType);
+                    if(username.ToLower() != "admin")
+                    {
+                        MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này???.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+                    string message = BUSAccount.Instance.GrantPermission(usernameTK, accountType);
                     if (message == "")
                     {
-                        MessageBox.Show($"Cập Quyền Cho Tài Khoản: {username} Với Quyền: {accountType} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Cập Quyền Cho Tài Khoản: {usernameTK} Với Quyền: {accountType} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllAccount();
                     }
                     else
