@@ -141,7 +141,7 @@ namespace BUS
 
             if (!(DALStudent.Instance.GetStudentByID(masv).Rows.Count == 0))
             {
-                if (DALStudent.Instance.GetStudentByCCCD(socccd).Rows.Count == 0)
+                if (DALStudent.Instance.GetStudentByCCCD(socccd).Rows.Count <= 1)
                 {
                     int result = DALStudent.Instance.UpdateHoSoSinhVien(masv, hoten, gioitinh, dantoc, ngaysinh, diachi, sdt, email, socccd, nienkhoa, namnhaphoc, malop, hotennt, quanhe, ngaysinhnt, sdtnt);
                     if (result > 0)

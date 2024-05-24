@@ -62,9 +62,7 @@ namespace GUI
         }
         public void LoadGiangVien()
         {
-            //string tenHP = comboBoxHocPhan.SelectedItem.ToString();
-            //string maHP = BUSSubject.Instance.GetIDByName(tenHP);
-            //BUSSchedule.Instance.GetLectureBySubject(comboBoxGiangVien, maHP);
+
         }
         public void LoadAllHocPhan()
         {
@@ -115,17 +113,7 @@ namespace GUI
             }
 
             BUSSchedule.Instance.GetScheduleByWeekandClass(week, Class, dataGridViewContent);
-            //dataGridViewContent.DataBindingComplete += (sender, e) =>
-            //{
-            //    DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
-            //    column.HeaderText = "STT";
-            //    dataGridViewContent.Columns.Insert(0, column);
-
-            //    for (int i = 0; i < dataGridViewContent.Rows.Count; i++)
-            //    {
-            //        dataGridViewContent.Rows[i].Cells[0].Value = (i + 1).ToString();
-            //    }
-            //};
+           
             foreach (DataGridViewColumn column in dataGridViewContent.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -230,7 +218,7 @@ namespace GUI
             comboBoxTuanSearch.Enabled = true;
 
             BUSSchedule.Instance.GetScheduleByClass(Class, dataGridViewContent);
-            //dataGridViewContent.Columns.RemoveAt(1);
+         
             foreach (DataGridViewColumn column in dataGridViewContent.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -264,7 +252,7 @@ namespace GUI
                 Class = comboBoxSearchClass.Text;
             }
             BUSSchedule.Instance.GetScheduleByWeekandClass(week, Class, dataGridViewContent);
-            //dataGridViewContent.Columns.RemoveAt(1);
+  
 
 
 
@@ -451,7 +439,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Đổi màu chữ của hàng khi di chuột ra
+         
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }

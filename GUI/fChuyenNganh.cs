@@ -89,6 +89,8 @@ namespace GUI
                     {
                         MessageBox.Show("Thêm Chuyên Ngành Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllSpecialty();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -130,6 +132,8 @@ namespace GUI
                     {
                         MessageBox.Show("Cập Nhật Thông Tin Chuyên Ngành Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllSpecialty();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -156,6 +160,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Xóa Thành Công Chuyên Ngành Có Mã: {textBoxMaCN.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllSpecialty();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -282,7 +288,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Đổi màu chữ của hàng khi di chuột ra
+              
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }

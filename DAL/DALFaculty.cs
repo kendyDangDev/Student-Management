@@ -37,6 +37,11 @@ namespace DAL
             string query = "select makhoa from khoa where tenkhoa = @name";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
         }
+        public DataTable GetNameByID(string makhoa)
+        {
+            string query = "select tenkhoa from khoa where makhoa = @makhoa";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { makhoa });
+        }
         public int InsertFaculty(string maKhoa, string tenKhoa, string sDT, string email)
         {
             string query = "USP_InsertFaculty @MAKhoa , @TENKhoa , @SDT , @Email";

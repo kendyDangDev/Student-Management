@@ -53,6 +53,7 @@ namespace GUI
                 }
                 dataGridViewContent.Columns.RemoveAt(1);
 
+
             };
             foreach (DataGridViewColumn column in dataGridViewContent.Columns)
             {
@@ -105,6 +106,8 @@ namespace GUI
                         {
                             MessageBox.Show($"Thêm Học Phần Có Mã {mahp} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadAllHocPhan();
+                            dataGridViewContent.Columns.RemoveAt(1);
+
                         }
                         else
                         {
@@ -146,7 +149,7 @@ namespace GUI
                 }
                 else
                 {
-                    //lấy mã khoa
+          
                     string maKhoa = BUSFaculty.Instance.GetIDByName(tenKhoa);
                     if (string.IsNullOrEmpty(numericUpDownSoTC.Text) || numericUpDownSoTC.Value == 0)
                     {
@@ -161,6 +164,8 @@ namespace GUI
                         {
                             MessageBox.Show($"Cập Nhật Thông Tin Học Phần Có Mã {mahp} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadAllHocPhan();
+                            dataGridViewContent.Columns.RemoveAt(1);
+
                         }
                         else
                         {
@@ -188,6 +193,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Xóa Thành Công Học Phần Có Mã: {textBoxMaHp.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllHocPhan();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -225,7 +232,7 @@ namespace GUI
             }
             else
             {
-                //Ok
+        
                 BUSSubject.Instance.FilterSubject(dataGridViewContent, columnsearch, valueSearch);
             }
         
@@ -281,7 +288,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Đổi màu chữ của hàng khi di chuột ra
+
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }

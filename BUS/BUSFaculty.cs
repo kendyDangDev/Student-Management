@@ -41,10 +41,23 @@ namespace BUS
             }
             cbx.DataSource = classList;
         }
+
         public string GetIDByName(string name)
         {
             string result = "";
             DataTable dataTable = DALFaculty.Instance.GetIDByName(name);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                result = row[0].ToString();
+            }
+            return result;
+        }
+
+        public string GetNameByID(string makhoa)
+        {
+            string result = "";
+            DataTable dataTable = DALFaculty.Instance.GetNameByID(makhoa);
 
             foreach (DataRow row in dataTable.Rows)
             {

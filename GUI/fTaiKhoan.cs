@@ -51,18 +51,18 @@ namespace GUI
                 BUSAccount.Instance.GetAllAccount(dataGridViewContent);
             }
 
-            //dataGridViewContent.DataBindingComplete += (sender, e) =>
-            //{
-            //    DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
-            //    column.HeaderText = "STT";
-            //    dataGridViewContent.Columns.Insert(0, column);
+            dataGridViewContent.DataBindingComplete += (sender, e) =>
+            {
+                DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+                column.HeaderText = "STT";
+                dataGridViewContent.Columns.Insert(0, column);
 
-            //    for (int i = 0; i < dataGridViewContent.Rows.Count; i++)
-            //    {
-            //        dataGridViewContent.Rows[i].Cells[0].Value = (i + 1).ToString();
-            //    }
-            //    dataGridViewContent.Columns.RemoveAt(1);
-            //};
+                for (int i = 0; i < dataGridViewContent.Rows.Count; i++)
+                {
+                    dataGridViewContent.Rows[i].Cells[0].Value = (i + 1).ToString();
+                }
+                dataGridViewContent.Columns.RemoveAt(1);
+            };
             foreach (DataGridViewColumn column in dataGridViewContent.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -109,6 +109,7 @@ namespace GUI
                     {
                         MessageBox.Show($"Cập Quyền Cho Tài Khoản: {usernameTK} Với Quyền: {accountType} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllAccount();
+                        dataGridViewContent.Columns.RemoveAt(1);
                     }
                     else
                     {
@@ -147,32 +148,6 @@ namespace GUI
         }
 
 
-        private Button tempButton;
-        private void dataGridViewContent_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right && e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Lấy vị trí của ô được click
-                Rectangle cellRect = dataGridViewContent.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-
-                // Tạo Button tạm thời
-                tempButton = new Button();
-                tempButton.Text = "Button";
-                tempButton.Size = new Size(70, 20);
-                tempButton.Location = new Point(cellRect.X + (cellRect.Width - tempButton.Width) / 2, cellRect.Y + (cellRect.Height - tempButton.Height) / 2);
-                tempButton.Click += TempButton_Click;
-
-                // Thêm Button vào Form
-                Controls.Add(tempButton);
-                tempButton.BringToFront();
-            }
-        }
-        private void TempButton_Click(object sender, EventArgs e)
-        {
-            // Xử lý sự kiện khi Button tạm thời được click
-            MessageBox.Show("Right-clicked Button!");
-        }
-
         private void dataGridViewContent_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex != -1)
@@ -189,7 +164,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Đổi màu chữ của hàng khi di chuột ra
+
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }

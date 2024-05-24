@@ -84,7 +84,7 @@ namespace BUS
             }
             else
             {
-                if (DALMajor.Instance.GetMajorByName(tenNganh).Rows.Count > 0)
+                if (DALMajor.Instance.GetMajorByName(tenNganh).Rows.Count > 1)
                 {
                     return "Ngành Có Tên Này Đã Tồn Tại";
                 }

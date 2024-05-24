@@ -141,6 +141,8 @@ namespace GUI
                     {
                         MessageBox.Show("Thêm Lớp Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllClass();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -197,6 +199,8 @@ namespace GUI
                     {
                         MessageBox.Show("Cập Nhật Thông Tin Lớp Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllClass();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -223,6 +227,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Xóa Thành Công Lớp Có Mã: {textBoxMaLop.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllClass();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -297,7 +303,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Đổi màu chữ của hàng khi di chuột ra
+           
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
          

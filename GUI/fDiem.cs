@@ -65,7 +65,7 @@ namespace GUI
                 BUSScore.Instance.GetAllScore(dataGridViewContent);
 
             }
-            //BUSScore.Instance.GetScoreBymaSV(dataGridViewContent, username);
+
 
 
             dataGridViewContent.DataBindingComplete += (sender, e) =>

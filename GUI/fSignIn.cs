@@ -51,10 +51,6 @@ namespace GUI
                     userNameLogin = username;
                  
                     LoginRequested?.Invoke(this, EventArgs.Empty);
-
-
-
-
                 }
                 else
                 {

@@ -88,6 +88,8 @@ namespace GUI
                     {
                         MessageBox.Show("Thêm Ngành Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllMajor();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -127,7 +129,10 @@ namespace GUI
                     if (message == "")
                     {
                         MessageBox.Show("Cập Nhật Thông Tin Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         LoadAllMajor();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -154,6 +159,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Xóa Thành Công Ngành Có Mã: {textBoxMaNganh.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllMajor();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -179,7 +186,7 @@ namespace GUI
             }
             else
             {
-                //Ok
+
                 BUSMajor.Instance.FilterMajor(dataGridViewContent, columnsearch, valueSearch);
             }
         }
@@ -224,7 +231,7 @@ namespace GUI
 
         private void dataGridViewContent_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //e.Handled = true;
+
 
         }
 
@@ -238,7 +245,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Đổi màu chữ của hàng khi di chuột ra
+
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }

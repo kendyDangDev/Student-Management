@@ -33,7 +33,7 @@ namespace GUI
         {
             InitializeComponent();
             LoadSinhVien();
-            //TimePickerBirthday.Format = DateTimePickerFormat.Custom;
+       
             TimePickerBirthday.CustomFormat = "dd/MM/yyyy";
             TimePickerBirthdayNT.CustomFormat = "dd/MM/yyyy";
             LoadClassList();
@@ -155,6 +155,8 @@ namespace GUI
                     {
                         MessageBox.Show("Thêm Sinh Viên Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSStudent.Instance.GetAllStudent(dataGridViewContent);
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -251,7 +253,7 @@ namespace GUI
                 string.IsNullOrWhiteSpace(hdt) ||
                 string.IsNullOrWhiteSpace(namnhaphoc))
             {
-                // Hiển thị thông báo hoặc thực hiện các hành động xử lý khi thông tin chưa được nhập đủ
+   
                 MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
@@ -261,6 +263,8 @@ namespace GUI
                 {
                     MessageBox.Show("Cập Nhật Thông Tin Sinh Viên Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BUSStudent.Instance.GetAllStudent(dataGridViewContent);
+                    dataGridViewContent.Columns.RemoveAt(1);
+
                 }
                 else
                 {
@@ -292,6 +296,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Xóa Thành Công Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadSinhVien();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -331,7 +337,7 @@ namespace GUI
                 }
                 else
                 {
-                    //Ok
+           
                     BUSStudent.Instance.FilterStudent(dataGridViewContent, columnsearch, valueSearch);
                 }
             }
@@ -364,7 +370,7 @@ namespace GUI
                 string dateStringsv = dataGridViewContent.Rows[index].Cells[5].Value.ToString();
                 if (DateTime.TryParseExact(dateStringsv, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime svparsedDate))
                 {
-                    // Chuyển đổi DateTime sang chuỗi theo định dạng mới
+  
                     string newDateString = svparsedDate.ToString("MM/dd/yyyy");
                     TimePickerBirthday.Value = DateTime.ParseExact(newDateString, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 }
@@ -386,7 +392,7 @@ namespace GUI
                     string newDateString = ntparsedDate.ToString("MM/dd/yyyy");
                     TimePickerBirthdayNT.Value = DateTime.ParseExact(newDateString, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 }
-                textBoxPhoneNT.Text = dataGridViewContent.Rows[index].Cells[17].Value.ToString();
+                textBoxPhoneNT.Text = dataGridViewContent.Rows[index].Cells[18].Value.ToString();
             }
         }
 
@@ -404,7 +410,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Đổi màu chữ của hàng khi di chuột ra
+    
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }

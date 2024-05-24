@@ -148,6 +148,7 @@
             this.TextBoxConfirmPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBoxConfirmPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxConfirmPass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxConfirmPass.ForeColor = System.Drawing.Color.Black;
             this.TextBoxConfirmPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxConfirmPass.Location = new System.Drawing.Point(156, 337);
             this.TextBoxConfirmPass.Name = "TextBoxConfirmPass";
@@ -170,6 +171,7 @@
             this.TextBoxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBoxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxPassword.ForeColor = System.Drawing.Color.Black;
             this.TextBoxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxPassword.Location = new System.Drawing.Point(156, 264);
             this.TextBoxPassword.Name = "TextBoxPassword";
@@ -192,6 +194,7 @@
             this.TextBoxPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBoxPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxPhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.TextBoxPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxPhoneNumber.Location = new System.Drawing.Point(156, 112);
             this.TextBoxPhoneNumber.Name = "TextBoxPhoneNumber";
@@ -214,6 +217,7 @@
             this.TextBoxEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBoxEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxEmail.ForeColor = System.Drawing.Color.Black;
             this.TextBoxEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxEmail.Location = new System.Drawing.Point(156, 188);
             this.TextBoxEmail.Name = "TextBoxEmail";
@@ -236,6 +240,7 @@
             this.TextBoxUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBoxUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxUsername.ForeColor = System.Drawing.Color.Black;
             this.TextBoxUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxUsername.Location = new System.Drawing.Point(156, 37);
             this.TextBoxUsername.Name = "TextBoxUsername";

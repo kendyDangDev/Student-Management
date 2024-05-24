@@ -37,6 +37,10 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.1.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
@@ -200,12 +204,6 @@
     <Compile Include="fSignUp.Designer.cs">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="fTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fTest.Designer.cs">
-      <DependentUpon>fTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="fThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,9 +288,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fTaiKhoan.resx">
       <DependentUpon>fTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fTest.resx">
-      <DependentUpon>fTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThongKe.resx">
       <DependentUpon>fThongKe.cs</DependentUpon>

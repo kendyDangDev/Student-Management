@@ -34,7 +34,7 @@ namespace GUI
         {
             InitializeComponent();
             hideSubMenu();
-            //ShowUserControls(new UCHome());
+ 
             loadPicture();
 
         }
@@ -48,7 +48,7 @@ namespace GUI
         {
             if (subMenu.Visible == false)
             {
-                //hideSubMenu();
+   
                 subMenu.Visible = true;
             }
             else
@@ -290,7 +290,7 @@ namespace GUI
 
             if (result != DialogResult.OK)
             {
-                e.Cancel = true; // Ngăn chặn đóng form nếu người dùng chọn Cancel
+                e.Cancel = true; 
             }
             else
             {
@@ -407,7 +407,7 @@ namespace GUI
         void loadPicture()
         {
 
-            // Khởi tạo danh sách ảnh
+           
             images = new List<Image>
         {
             Image.FromFile("1.jpg"),
@@ -484,12 +484,6 @@ namespace GUI
                 case "fChuyenNganh":
                     title = "DANH SÁCH NGÀNH HỌC TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
                     ExportExcel((DataTable)fChuyenNganh.Instance.dataGridViewContent.DataSource, title);
-                    break;
-                case "fThongKe":
-                    buttonExport.Enabled = false;
-                    break;
-                case "fTaiKhoan":
-                    buttonExport.Enabled =false;    
                     break;
                 default:
                     title = "";

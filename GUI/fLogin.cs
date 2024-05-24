@@ -37,7 +37,7 @@ namespace GUI
             formSignUp.FormBorderStyle = FormBorderStyle.None;
             formSignUp.TopLevel = false;
             formSignUp.Parent = panelLogin;
-            formSignUp.Hide(); // Ẩn Form SignUp ban đầu
+            formSignUp.Hide(); 
 
 
 

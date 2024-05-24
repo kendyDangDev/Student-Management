@@ -35,7 +35,7 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) 
                 || string.IsNullOrWhiteSpace(confirmpass) || string.IsNullOrWhiteSpace(phoneNumber) || string.IsNullOrWhiteSpace(email))
             {
-                // Hiển thị thông báo lỗi hoặc thực hiện xử lý tương ứng
+
                 MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else

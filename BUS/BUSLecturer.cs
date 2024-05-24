@@ -137,7 +137,7 @@ namespace BUS
 
             if (!(DALLecturer.Instance.GetGiangVienByID(maGV).Rows.Count == 0))
             {
-                if (DALLecturer.Instance.GetSoCCCD(socccd).Rows.Count == 0)
+                if (DALLecturer.Instance.GetSoCCCD(socccd).Rows.Count <= 1)
                 {
                     int result = DALLecturer.Instance.UpdateGiangVien(maGV, hoten, gioitinh, trinhdo, ngaysinh, diachi, socccd, sdt, makhoa);
                     if (result > 0)

@@ -87,7 +87,7 @@ namespace GUI
                 string trinhdo = comboBoxTrinhDo.Text;
                 if (comboBoxTrinhDo.SelectedIndex != -1)
                 {
-                    gioitinh = comboBoxTrinhDo.SelectedItem.ToString();
+                    trinhdo = comboBoxTrinhDo.SelectedItem.ToString();
 
                 }
                 DateTime ngaysinh = DateTime.Parse(TimePickerNgaySinh.Value.ToString());
@@ -121,6 +121,8 @@ namespace GUI
                     {
                         MessageBox.Show("Thêm Giảng Viên Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSLecturer.Instance.GetAllGiangVien(dataGridViewContent);
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -151,7 +153,7 @@ namespace GUI
                 string trinhdo = comboBoxTrinhDo.Text;
                 if (comboBoxTrinhDo.SelectedIndex != -1)
                 {
-                    gioitinh = comboBoxTrinhDo.SelectedItem.ToString();
+                    trinhdo = comboBoxTrinhDo.SelectedItem.ToString();
 
                 }
                 DateTime ngaysinh = DateTime.Parse(TimePickerNgaySinh.Value.ToString());
@@ -184,6 +186,8 @@ namespace GUI
                     {
                         MessageBox.Show("Cập Nhật Thông Tin Giảng Viên Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSLecturer.Instance.GetAllGiangVien(dataGridViewContent);
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -210,6 +214,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Xóa Giảng Viên Có Mã: {textBoxMaGV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadGiangVien();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -311,7 +317,8 @@ namespace GUI
                 textBoxDiaChi.Text = dataGridViewContent.Rows[index].Cells[6].Value.ToString();
                 textBoxSoCCCD.Text = dataGridViewContent.Rows[index].Cells[7].Value.ToString();
                 textBoxSDT.Text = dataGridViewContent.Rows[index].Cells[8].Value.ToString();
-                comboBoxKhoa.Text = dataGridViewContent.Rows[index].Cells[9].Value.ToString();
+                string tenkhoa = BUSFaculty.Instance.GetNameByID(dataGridViewContent.Rows[index].Cells[9].Value.ToString());
+                comboBoxKhoa.Text = tenkhoa;
             }
         }
         Color color;
@@ -320,7 +327,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                // Đổi màu chữ của hàng khi di chuột ra
+
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }

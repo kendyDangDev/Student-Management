@@ -21,9 +21,9 @@ namespace GUI
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            string username = TextBoxUsername.Texts;
-            string phonenumber = TextBoxPhoneNumber.Texts;
-            string email = TextBoxEmail.Texts;
+            string username = TextBoxUsername.Text;
+            string phonenumber = TextBoxPhoneNumber.Text;
+            string email = TextBoxEmail.Text;
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(phonenumber) || string.IsNullOrEmpty(email))
             {
@@ -43,9 +43,9 @@ namespace GUI
                     else
                     {
                         MessageBox.Show($"Mật Khẩu của bạn là: {getPassword}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        TextBoxUsername.Texts  = null;
-                        TextBoxPhoneNumber.Texts = null;
-                        TextBoxEmail.Texts = null;
+                        TextBoxUsername.Text  = null;
+                        TextBoxPhoneNumber.Text = null;
+                        TextBoxEmail.Text = null;
                     }
                 }
                 else
