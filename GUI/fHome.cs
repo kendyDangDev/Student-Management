@@ -34,7 +34,8 @@ namespace GUI
         {
             InitializeComponent();
             hideSubMenu();
- 
+
+            InitializeTimer();
             loadPicture();
 
         }
@@ -532,6 +533,27 @@ namespace GUI
                 }
             }
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToString("dddd, dd/MM/yyyy HH:mm:ss");
+        }
+        private void InitializeTimer()
+        {
+            timer1.Interval = 1000; // 1000 milliseconds = 1 second
+            timer1.Tick += timer2_Tick;
+            timer1.Start();
+        }
+
+        private void labelTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     public static class FormHelper
     {
@@ -540,5 +562,7 @@ namespace GUI
             return Application.OpenForms.Cast<Form>().LastOrDefault();
         }
     }
+
+
 
 }

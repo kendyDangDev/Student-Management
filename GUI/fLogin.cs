@@ -83,7 +83,7 @@ namespace GUI
         {
             this.Hide();
             formHome.Show();
-       
+
             formHome.labelUserName.Text = fSignIn.userNameLogin.ToUpper();
             formHome.labelPermission.Text = fSignIn.accountType.ToLower();
         

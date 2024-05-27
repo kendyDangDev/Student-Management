@@ -130,6 +130,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Nhập Điểm Cho Sinh Viên {tenSinhVien} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSScore.Instance.GetAllScore(dataGridViewContent);
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -178,6 +180,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Cập Nhật Điểm Cho Sinh Viên {tenSinhVien} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSScore.Instance.GetAllScore(dataGridViewContent);
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -217,6 +221,8 @@ namespace GUI
                     {
                         MessageBox.Show($"Xóa Thành Công Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên:  {tenSinhVien}  Có Mã:  {maSV}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllScore();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -310,7 +316,7 @@ namespace GUI
         {
             if (e.RowIndex != -1)
             {
-                comboBoxSinhVien.Text = dataGridViewContent.Rows[e.RowIndex].Cells[1].Value.ToString();
+                comboBoxSinhVien.Text = dataGridViewContent.Rows[e.RowIndex].Cells[2].Value.ToString();
                 comboBoxMonHoc.Text = dataGridViewContent.Rows[e.RowIndex].Cells[5].Value.ToString();
                 textBoxGHP.Text = dataGridViewContent.Rows[e.RowIndex].Cells[6].Value.ToString();
                 textBoxKTHP.Text = dataGridViewContent.Rows[e.RowIndex].Cells[7].Value.ToString();

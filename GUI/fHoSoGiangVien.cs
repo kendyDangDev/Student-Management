@@ -53,13 +53,18 @@ namespace GUI
             BUSLecturer.Instance.GetAllGiangVien(dataGridViewContent);
             dataGridViewContent.DataBindingComplete += (sender, e) =>
             {
-                DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
-                column.HeaderText = "STT";
-                dataGridViewContent.Columns.Insert(0, column);
+                if (!dataGridViewContent.Columns.Contains("STT"))
+                {
+                    DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+                    column.HeaderText = "STT";
+                    column.Name = "STT"; // Đặt tên cho cột để dễ kiểm tra
+                    dataGridViewContent.Columns.Insert(0, column);
+                }
 
+                // Cập nhật giá trị cho cột STT
                 for (int i = 0; i < dataGridViewContent.Rows.Count; i++)
                 {
-                    dataGridViewContent.Rows[i].Cells[0].Value = (i + 1).ToString();
+                    dataGridViewContent.Rows[i].Cells["STT"].Value = (i + 1).ToString();
                 }
             };
             foreach (DataGridViewColumn column in dataGridViewContent.Columns)
@@ -121,7 +126,7 @@ namespace GUI
                     {
                         MessageBox.Show("Thêm Giảng Viên Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSLecturer.Instance.GetAllGiangVien(dataGridViewContent);
-                        dataGridViewContent.Columns.RemoveAt(1);
+                        
 
                     }
                     else
@@ -186,7 +191,7 @@ namespace GUI
                     {
                         MessageBox.Show("Cập Nhật Thông Tin Giảng Viên Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSLecturer.Instance.GetAllGiangVien(dataGridViewContent);
-                        dataGridViewContent.Columns.RemoveAt(1);
+                        
 
                     }
                     else
@@ -214,7 +219,7 @@ namespace GUI
                     {
                         MessageBox.Show($"Xóa Giảng Viên Có Mã: {textBoxMaGV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadGiangVien();
-                        dataGridViewContent.Columns.RemoveAt(1);
+                        
 
                     }
                     else
@@ -248,7 +253,7 @@ namespace GUI
                 //Ok
                 BUSLecturer.Instance.FilterLectures(dataGridViewContent, columnsearch, valueSearch);
             }
-            dataGridViewContent.Columns.RemoveAt(1);
+            
 
         }
 
