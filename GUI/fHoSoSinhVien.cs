@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -173,30 +174,48 @@ namespace GUI
 
         private void comboBoxColumn_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            textBoxValue.Text = comboBoxColumn.Text;
-            textBoxValue.ForeColor = SystemColors.ActiveBorder;
-
+            string column = comboBoxColumn.Text;
+            switch (column)
+            {
+                case "Lớp":
+                     BUSClass.Instance.GetAllLopHoc(comboBoxValue);
+                    break;
+                case "Hệ Đào Tạo":
+                    List<string> value = new List<string> { "Chính Quy", "Từ Xa" };
+                    comboBoxValue.DataSource = value;
+                    break;
+                default:
+                    comboBoxValue.DataSource = null;
+                    comboBoxValue.Text = comboBoxColumn.Text;
+                    comboBoxValue.ForeColor = SystemColors.ActiveBorder;
+                    break;
+            }
+                                        //            Mã SV
+                                        //Họ Tên
+                                        //Lớp
+                                        //Số Điện Thoại
+                                        //Niên Khóa
+                                        //Hệ Đào Tạo
         }
 
         private void TextBoxSearch_Click(object sender, EventArgs e)
         {
-            textBoxValue.Text = "";
-            textBoxValue.ForeColor = Color.Black; // Đặt màu chữ xám
+            comboBoxValue.Text = "";
+            comboBoxValue.ForeColor = Color.Black; // Đặt màu chữ xám
         }
 
         private void TextBoxSearch_Load(object sender, EventArgs e)
         {
-            textBoxValue.Text = comboBoxColumn.Text;
-            textBoxValue.ForeColor = SystemColors.ActiveBorder;
+            comboBoxValue.Text = comboBoxColumn.Text;
+            comboBoxValue.ForeColor = SystemColors.ActiveBorder;
         }
 
         private void textBoxSearch_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxValue.Text))
+            if (string.IsNullOrEmpty(comboBoxValue.Text))
             {
-                textBoxValue.Text = comboBoxColumn.Text;
-                textBoxValue.ForeColor = SystemColors.ActiveBorder;
+                comboBoxValue.Text = comboBoxColumn.Text;
+                comboBoxValue.ForeColor = SystemColors.ActiveBorder;
             }
         }
 
@@ -342,7 +361,7 @@ namespace GUI
                     columnsearch = comboBoxColumn.SelectedItem.ToString();
 
                 }
-                string valueSearch = textBoxValue.Text;
+                string valueSearch = comboBoxValue.Text;
 
                 if (string.IsNullOrEmpty(valueSearch) || columnsearch == valueSearch)
                 {
@@ -367,8 +386,8 @@ namespace GUI
 
         private void textBoxValue_Click(object sender, EventArgs e)
         {
-            textBoxValue.Text = "";
-            textBoxValue.ForeColor = Color.Black;
+            comboBoxValue.Text = "";
+            comboBoxValue.ForeColor = Color.Black;
         }
 
         private void dataGridViewContent_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -461,6 +480,17 @@ namespace GUI
                 StudentDetail.Instance.Show();
 
             }
+        }
+
+        private void textBoxValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxValue_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBoxValue.Text = "";
+            comboBoxValue.ForeColor = Color.Black;
         }
     }
 }

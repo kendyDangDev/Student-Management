@@ -35,7 +35,7 @@ namespace BUS
 
         public string Createaccount(string username, string password, string phoneNumber, string email)
         {
-            Regex regexNumber = new Regex("^[0-9]+$");
+            Regex regexNumber = new Regex(@"^0\d{9}$");
             Regex regexEmail = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
             if (!regexNumber.IsMatch(phoneNumber))
             {

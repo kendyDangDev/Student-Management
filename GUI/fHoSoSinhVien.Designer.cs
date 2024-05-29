@@ -35,7 +35,6 @@
             this.groupBoxThongTinSV = new System.Windows.Forms.GroupBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
-            this.TimePickerBirthday = new GUI.UserControls.KDDateTimePicker();
             this.groupBoxChiTiet = new System.Windows.Forms.GroupBox();
             this.comboBoxLop = new System.Windows.Forms.ComboBox();
             this.comboBoxHDT = new System.Windows.Forms.ComboBox();
@@ -46,7 +45,6 @@
             this.labelHDT = new System.Windows.Forms.Label();
             this.textBoxNienKhoa = new System.Windows.Forms.TextBox();
             this.groupBoxNguoiThan = new System.Windows.Forms.GroupBox();
-            this.TimePickerBirthdayNT = new GUI.UserControls.KDDateTimePicker();
             this.textBoxPhoneNT = new System.Windows.Forms.TextBox();
             this.labelPhoneNT = new System.Windows.Forms.Label();
             this.labelBirthdayNT = new System.Windows.Forms.Label();
@@ -79,14 +77,15 @@
             this.panelFuntions = new System.Windows.Forms.Panel();
             this.groupBoxFunctions = new System.Windows.Forms.GroupBox();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
-            this.panelSearch = new System.Windows.Forms.Panel();
-            this.textBoxValue = new System.Windows.Forms.TextBox();
-            this.comboBoxColumn = new System.Windows.Forms.ComboBox();
-            this.dataGridViewContent = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ButtonSearch = new FontAwesome.Sharp.IconButton();
+            this.comboBoxColumn = new System.Windows.Forms.ComboBox();
             this.ButtonDel = new FontAwesome.Sharp.IconButton();
             this.ButtonUpdate = new FontAwesome.Sharp.IconButton();
             this.ButtonAdd = new FontAwesome.Sharp.IconButton();
+            this.dataGridViewContent = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.comboBoxValue = new System.Windows.Forms.ComboBox();
+            this.TimePickerBirthday = new GUI.UserControls.KDDateTimePicker();
+            this.TimePickerBirthdayNT = new GUI.UserControls.KDDateTimePicker();
             this.panelThongTin.SuspendLayout();
             this.groupBoxThongTinSV.SuspendLayout();
             this.groupBoxChiTiet.SuspendLayout();
@@ -95,7 +94,6 @@
             this.panelFuntions.SuspendLayout();
             this.groupBoxFunctions.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
-            this.panelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContent)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,20 +155,6 @@
             this.labelEmail.TabIndex = 6;
             this.labelEmail.Text = "Email:";
             this.labelEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TimePickerBirthday
-            // 
-            this.TimePickerBirthday.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.TimePickerBirthday.BorderSize = 0;
-            this.TimePickerBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.TimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TimePickerBirthday.Location = new System.Drawing.Point(133, 155);
-            this.TimePickerBirthday.MinimumSize = new System.Drawing.Size(0, 35);
-            this.TimePickerBirthday.Name = "TimePickerBirthday";
-            this.TimePickerBirthday.Size = new System.Drawing.Size(136, 35);
-            this.TimePickerBirthday.SkinColor = System.Drawing.Color.White;
-            this.TimePickerBirthday.TabIndex = 5;
-            this.TimePickerBirthday.TextColor = System.Drawing.Color.Black;
             // 
             // groupBoxChiTiet
             // 
@@ -281,23 +265,6 @@
             this.groupBoxNguoiThan.TabIndex = 3;
             this.groupBoxNguoiThan.TabStop = false;
             this.groupBoxNguoiThan.Text = "Người Thân";
-            // 
-            // TimePickerBirthdayNT
-            // 
-            this.TimePickerBirthdayNT.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.TimePickerBirthdayNT.BorderSize = 0;
-            this.TimePickerBirthdayNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimePickerBirthdayNT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TimePickerBirthdayNT.Location = new System.Drawing.Point(122, 116);
-            this.TimePickerBirthdayNT.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
-            this.TimePickerBirthdayNT.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.TimePickerBirthdayNT.MinimumSize = new System.Drawing.Size(0, 35);
-            this.TimePickerBirthdayNT.Name = "TimePickerBirthdayNT";
-            this.TimePickerBirthdayNT.Size = new System.Drawing.Size(142, 35);
-            this.TimePickerBirthdayNT.SkinColor = System.Drawing.Color.White;
-            this.TimePickerBirthdayNT.TabIndex = 6;
-            this.TimePickerBirthdayNT.TextColor = System.Drawing.Color.Black;
-            this.TimePickerBirthdayNT.Value = new System.DateTime(2004, 8, 19, 0, 0, 0, 0);
             // 
             // textBoxPhoneNT
             // 
@@ -601,7 +568,7 @@
             this.groupBoxFunctions.Controls.Add(this.ButtonDel);
             this.groupBoxFunctions.Controls.Add(this.ButtonUpdate);
             this.groupBoxFunctions.Controls.Add(this.ButtonAdd);
-            this.groupBoxFunctions.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxFunctions.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxFunctions.Location = new System.Drawing.Point(19, 17);
             this.groupBoxFunctions.Name = "groupBoxFunctions";
             this.groupBoxFunctions.Size = new System.Drawing.Size(241, 503);
@@ -611,9 +578,10 @@
             // 
             // groupBoxSearch
             // 
-            this.groupBoxSearch.Controls.Add(this.panelSearch);
+            this.groupBoxSearch.Controls.Add(this.comboBoxValue);
             this.groupBoxSearch.Controls.Add(this.ButtonSearch);
             this.groupBoxSearch.Controls.Add(this.comboBoxColumn);
+            this.groupBoxSearch.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxSearch.Location = new System.Drawing.Point(21, 275);
             this.groupBoxSearch.Name = "groupBoxSearch";
             this.groupBoxSearch.Size = new System.Drawing.Size(205, 205);
@@ -621,26 +589,22 @@
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Tìm Kiếm";
             // 
-            // panelSearch
+            // ButtonSearch
             // 
-            this.panelSearch.BackColor = System.Drawing.Color.Transparent;
-            this.panelSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSearch.Controls.Add(this.textBoxValue);
-            this.panelSearch.Location = new System.Drawing.Point(13, 82);
-            this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(180, 51);
-            this.panelSearch.TabIndex = 7;
-            // 
-            // textBoxValue
-            // 
-            this.textBoxValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxValue.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBoxValue.Location = new System.Drawing.Point(13, 11);
-            this.textBoxValue.Name = "textBoxValue";
-            this.textBoxValue.Size = new System.Drawing.Size(151, 29);
-            this.textBoxValue.TabIndex = 6;
-            this.textBoxValue.Click += new System.EventHandler(this.textBoxValue_Click);
-            this.textBoxValue.Leave += new System.EventHandler(this.textBoxSearch_Leave);
+            this.ButtonSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.ButtonSearch.IconColor = System.Drawing.Color.Black;
+            this.ButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonSearch.IconSize = 45;
+            this.ButtonSearch.Location = new System.Drawing.Point(13, 142);
+            this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.Size = new System.Drawing.Size(180, 49);
+            this.ButtonSearch.TabIndex = 3;
+            this.ButtonSearch.Text = "Tìm Kiếm";
+            this.ButtonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonSearch.UseVisualStyleBackColor = true;
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // comboBoxColumn
             // 
@@ -650,13 +614,72 @@
             "Mã SV",
             "Họ Tên",
             "Lớp",
-            "Địa Chỉ"});
+            "Số Điện Thoại",
+            "Niên Khóa",
+            "Hệ Đào Tạo"});
             this.comboBoxColumn.Location = new System.Drawing.Point(13, 39);
             this.comboBoxColumn.Name = "comboBoxColumn";
             this.comboBoxColumn.Size = new System.Drawing.Size(180, 31);
             this.comboBoxColumn.TabIndex = 2;
             this.comboBoxColumn.Text = "Mã SV";
             this.comboBoxColumn.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumn_SelectedIndexChanged);
+            // 
+            // ButtonDel
+            // 
+            this.ButtonDel.BackColor = System.Drawing.Color.White;
+            this.ButtonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDel.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.ButtonDel.IconColor = System.Drawing.Color.Black;
+            this.ButtonDel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonDel.IconSize = 45;
+            this.ButtonDel.Location = new System.Drawing.Point(21, 190);
+            this.ButtonDel.Name = "ButtonDel";
+            this.ButtonDel.Size = new System.Drawing.Size(193, 59);
+            this.ButtonDel.TabIndex = 1;
+            this.ButtonDel.Text = "Xóa Sinh Viên";
+            this.ButtonDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDel.UseVisualStyleBackColor = false;
+            this.ButtonDel.Click += new System.EventHandler(this.ButtonDel_Click);
+            // 
+            // ButtonUpdate
+            // 
+            this.ButtonUpdate.BackColor = System.Drawing.Color.White;
+            this.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.Squarespace;
+            this.ButtonUpdate.IconColor = System.Drawing.Color.Black;
+            this.ButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonUpdate.IconSize = 45;
+            this.ButtonUpdate.Location = new System.Drawing.Point(21, 114);
+            this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.Size = new System.Drawing.Size(193, 59);
+            this.ButtonUpdate.TabIndex = 1;
+            this.ButtonUpdate.Text = "Cập Nhật";
+            this.ButtonUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonUpdate.UseVisualStyleBackColor = false;
+            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
+            // 
+            // ButtonAdd
+            // 
+            this.ButtonAdd.BackColor = System.Drawing.Color.White;
+            this.ButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAdd.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.ButtonAdd.IconColor = System.Drawing.Color.Black;
+            this.ButtonAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonAdd.IconSize = 45;
+            this.ButtonAdd.Location = new System.Drawing.Point(21, 40);
+            this.ButtonAdd.Name = "ButtonAdd";
+            this.ButtonAdd.Size = new System.Drawing.Size(193, 59);
+            this.ButtonAdd.TabIndex = 0;
+            this.ButtonAdd.Text = "Thêm Mới";
+            this.ButtonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonAdd.UseVisualStyleBackColor = false;
+            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // dataGridViewContent
             // 
@@ -724,75 +747,50 @@
             this.dataGridViewContent.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellMouseEnter);
             this.dataGridViewContent.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellMouseLeave);
             // 
-            // ButtonSearch
+            // comboBoxValue
             // 
-            this.ButtonSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.ButtonSearch.IconColor = System.Drawing.Color.Black;
-            this.ButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonSearch.IconSize = 45;
-            this.ButtonSearch.Location = new System.Drawing.Point(13, 146);
-            this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(180, 45);
-            this.ButtonSearch.TabIndex = 3;
-            this.ButtonSearch.Text = "Tìm Kiếm";
-            this.ButtonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonSearch.UseVisualStyleBackColor = true;
-            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            this.comboBoxValue.DropDownHeight = 88;
+            this.comboBoxValue.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxValue.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.comboBoxValue.FormattingEnabled = true;
+            this.comboBoxValue.IntegralHeight = false;
+            this.comboBoxValue.Location = new System.Drawing.Point(13, 79);
+            this.comboBoxValue.Name = "comboBoxValue";
+            this.comboBoxValue.Size = new System.Drawing.Size(180, 31);
+            this.comboBoxValue.TabIndex = 4;
+            this.comboBoxValue.Text = "12522091";
+            this.comboBoxValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBoxValue_MouseClick);
             // 
-            // ButtonDel
+            // TimePickerBirthday
             // 
-            this.ButtonDel.BackColor = System.Drawing.Color.White;
-            this.ButtonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDel.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.ButtonDel.IconColor = System.Drawing.Color.Black;
-            this.ButtonDel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonDel.IconSize = 45;
-            this.ButtonDel.Location = new System.Drawing.Point(21, 190);
-            this.ButtonDel.Name = "ButtonDel";
-            this.ButtonDel.Size = new System.Drawing.Size(193, 59);
-            this.ButtonDel.TabIndex = 1;
-            this.ButtonDel.Text = "Xóa Sinh Viên";
-            this.ButtonDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonDel.UseVisualStyleBackColor = false;
-            this.ButtonDel.Click += new System.EventHandler(this.ButtonDel_Click);
+            this.TimePickerBirthday.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.TimePickerBirthday.BorderSize = 0;
+            this.TimePickerBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.TimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimePickerBirthday.Location = new System.Drawing.Point(133, 155);
+            this.TimePickerBirthday.MinimumSize = new System.Drawing.Size(0, 35);
+            this.TimePickerBirthday.Name = "TimePickerBirthday";
+            this.TimePickerBirthday.Size = new System.Drawing.Size(136, 35);
+            this.TimePickerBirthday.SkinColor = System.Drawing.Color.White;
+            this.TimePickerBirthday.TabIndex = 5;
+            this.TimePickerBirthday.TextColor = System.Drawing.Color.Black;
             // 
-            // ButtonUpdate
+            // TimePickerBirthdayNT
             // 
-            this.ButtonUpdate.BackColor = System.Drawing.Color.White;
-            this.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.Squarespace;
-            this.ButtonUpdate.IconColor = System.Drawing.Color.Black;
-            this.ButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonUpdate.IconSize = 45;
-            this.ButtonUpdate.Location = new System.Drawing.Point(21, 114);
-            this.ButtonUpdate.Name = "ButtonUpdate";
-            this.ButtonUpdate.Size = new System.Drawing.Size(193, 59);
-            this.ButtonUpdate.TabIndex = 1;
-            this.ButtonUpdate.Text = "Cập Nhật";
-            this.ButtonUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonUpdate.UseVisualStyleBackColor = false;
-            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
-            // 
-            // ButtonAdd
-            // 
-            this.ButtonAdd.BackColor = System.Drawing.Color.White;
-            this.ButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAdd.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.ButtonAdd.IconColor = System.Drawing.Color.Black;
-            this.ButtonAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonAdd.IconSize = 45;
-            this.ButtonAdd.Location = new System.Drawing.Point(21, 40);
-            this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(193, 59);
-            this.ButtonAdd.TabIndex = 0;
-            this.ButtonAdd.Text = "Thêm Mới";
-            this.ButtonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonAdd.UseVisualStyleBackColor = false;
-            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            this.TimePickerBirthdayNT.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.TimePickerBirthdayNT.BorderSize = 0;
+            this.TimePickerBirthdayNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimePickerBirthdayNT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimePickerBirthdayNT.Location = new System.Drawing.Point(122, 116);
+            this.TimePickerBirthdayNT.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
+            this.TimePickerBirthdayNT.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.TimePickerBirthdayNT.MinimumSize = new System.Drawing.Size(0, 35);
+            this.TimePickerBirthdayNT.Name = "TimePickerBirthdayNT";
+            this.TimePickerBirthdayNT.Size = new System.Drawing.Size(142, 35);
+            this.TimePickerBirthdayNT.SkinColor = System.Drawing.Color.White;
+            this.TimePickerBirthdayNT.TabIndex = 6;
+            this.TimePickerBirthdayNT.TextColor = System.Drawing.Color.Black;
+            this.TimePickerBirthdayNT.Value = new System.DateTime(2004, 8, 19, 0, 0, 0, 0);
             // 
             // fHoSoSinhVien
             // 
@@ -818,8 +816,6 @@
             this.panelFuntions.ResumeLayout(false);
             this.groupBoxFunctions.ResumeLayout(false);
             this.groupBoxSearch.ResumeLayout(false);
-            this.panelSearch.ResumeLayout(false);
-            this.panelSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContent)).EndInit();
             this.ResumeLayout(false);
 
@@ -877,11 +873,10 @@
         private FontAwesome.Sharp.IconButton ButtonSearch;
         private System.Windows.Forms.ComboBox comboBoxLop;
         private System.Windows.Forms.ComboBox comboBoxColumn;
-        private System.Windows.Forms.TextBox textBoxValue;
-        private System.Windows.Forms.Panel panelSearch;
         private UserControls.KDDateTimePicker TimePickerBirthday;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.ComboBox comboBoxValue;
         public Guna.UI2.WinForms.Guna2DataGridView dataGridViewContent;
     }
 }
