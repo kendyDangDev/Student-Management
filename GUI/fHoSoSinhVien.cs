@@ -418,5 +418,40 @@ namespace GUI
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }
+
+        private void dataGridViewContent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+         
+            if (e.RowIndex != -1)
+            {
+                index = e.RowIndex;
+                string masv = textBoxMaSV.Text;
+                string hoten = dataGridViewContent.Rows[index].Cells[2].Value.ToString();
+                string gioitinh = dataGridViewContent.Rows[index].Cells[3].Value.ToString();
+                string dantoc = dataGridViewContent.Rows[index].Cells[4].Value.ToString();
+            
+                DateTime ngaysinh = DateTime.Parse(TimePickerBirthday.Value.ToString());
+
+                string diachi = dataGridViewContent.Rows[index].Cells[6].Value.ToString();
+                string sdt= dataGridViewContent.Rows[index].Cells[7].Value.ToString();
+                string email = dataGridViewContent.Rows[index].Cells[8].Value.ToString();
+                string cccd = dataGridViewContent.Rows[index].Cells[9].Value.ToString();
+               string nienkhoa = dataGridViewContent.Rows[index].Cells[10].Value.ToString();
+                string namnhaphoc = dataGridViewContent.Rows[index].Cells[11].Value.ToString();
+                string hedaotao= dataGridViewContent.Rows[index].Cells[12].Value.ToString();
+
+                string malop = dataGridViewContent.Rows[index].Cells[13].Value.ToString();
+                string hotenNT = dataGridViewContent.Rows[index].Cells[15].Value.ToString();
+                string mqh = dataGridViewContent.Rows[index].Cells[16].Value.ToString();
+                       
+                DateTime ngaysinhNT = TimePickerBirthdayNT.Value;
+
+                string sdtNT = dataGridViewContent.Rows[index].Cells[18].Value.ToString();
+
+                StudentDetail.Instance.loadData(masv, hoten, gioitinh, dantoc, ngaysinh, diachi, sdt, email, cccd, nienkhoa, namnhaphoc, malop, hotenNT, mqh, ngaysinhNT, sdtNT, hedaotao );
+                StudentDetail.Instance.Show();
+
+            }
+        }
     }
 }

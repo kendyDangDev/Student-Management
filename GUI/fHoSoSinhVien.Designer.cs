@@ -81,12 +81,12 @@
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.textBoxValue = new System.Windows.Forms.TextBox();
-            this.ButtonSearch = new FontAwesome.Sharp.IconButton();
             this.comboBoxColumn = new System.Windows.Forms.ComboBox();
+            this.dataGridViewContent = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ButtonSearch = new FontAwesome.Sharp.IconButton();
             this.ButtonDel = new FontAwesome.Sharp.IconButton();
             this.ButtonUpdate = new FontAwesome.Sharp.IconButton();
             this.ButtonAdd = new FontAwesome.Sharp.IconButton();
-            this.dataGridViewContent = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelThongTin.SuspendLayout();
             this.groupBoxThongTinSV.SuspendLayout();
             this.groupBoxChiTiet.SuspendLayout();
@@ -642,22 +642,6 @@
             this.textBoxValue.Click += new System.EventHandler(this.textBoxValue_Click);
             this.textBoxValue.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
-            // ButtonSearch
-            // 
-            this.ButtonSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.ButtonSearch.IconColor = System.Drawing.Color.Black;
-            this.ButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonSearch.IconSize = 45;
-            this.ButtonSearch.Location = new System.Drawing.Point(13, 146);
-            this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(180, 45);
-            this.ButtonSearch.TabIndex = 3;
-            this.ButtonSearch.Text = "Tìm Kiếm";
-            this.ButtonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonSearch.UseVisualStyleBackColor = true;
-            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
-            // 
             // comboBoxColumn
             // 
             this.comboBoxColumn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -673,60 +657,6 @@
             this.comboBoxColumn.TabIndex = 2;
             this.comboBoxColumn.Text = "Mã SV";
             this.comboBoxColumn.SelectedIndexChanged += new System.EventHandler(this.comboBoxColumn_SelectedIndexChanged);
-            // 
-            // ButtonDel
-            // 
-            this.ButtonDel.BackColor = System.Drawing.Color.White;
-            this.ButtonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDel.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.ButtonDel.IconColor = System.Drawing.Color.Black;
-            this.ButtonDel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonDel.IconSize = 45;
-            this.ButtonDel.Location = new System.Drawing.Point(21, 190);
-            this.ButtonDel.Name = "ButtonDel";
-            this.ButtonDel.Size = new System.Drawing.Size(193, 59);
-            this.ButtonDel.TabIndex = 1;
-            this.ButtonDel.Text = "Xóa Sinh Viên";
-            this.ButtonDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonDel.UseVisualStyleBackColor = false;
-            this.ButtonDel.Click += new System.EventHandler(this.ButtonDel_Click);
-            // 
-            // ButtonUpdate
-            // 
-            this.ButtonUpdate.BackColor = System.Drawing.Color.White;
-            this.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.Squarespace;
-            this.ButtonUpdate.IconColor = System.Drawing.Color.Black;
-            this.ButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonUpdate.IconSize = 45;
-            this.ButtonUpdate.Location = new System.Drawing.Point(21, 114);
-            this.ButtonUpdate.Name = "ButtonUpdate";
-            this.ButtonUpdate.Size = new System.Drawing.Size(193, 59);
-            this.ButtonUpdate.TabIndex = 1;
-            this.ButtonUpdate.Text = "Cập Nhật";
-            this.ButtonUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonUpdate.UseVisualStyleBackColor = false;
-            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
-            // 
-            // ButtonAdd
-            // 
-            this.ButtonAdd.BackColor = System.Drawing.Color.White;
-            this.ButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAdd.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.ButtonAdd.IconColor = System.Drawing.Color.Black;
-            this.ButtonAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonAdd.IconSize = 45;
-            this.ButtonAdd.Location = new System.Drawing.Point(21, 40);
-            this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(193, 59);
-            this.ButtonAdd.TabIndex = 0;
-            this.ButtonAdd.Text = "Thêm Mới";
-            this.ButtonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonAdd.UseVisualStyleBackColor = false;
-            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // dataGridViewContent
             // 
@@ -790,8 +720,79 @@
             this.dataGridViewContent.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
             this.dataGridViewContent.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridViewContent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellClick_1);
+            this.dataGridViewContent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellDoubleClick);
             this.dataGridViewContent.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellMouseEnter);
             this.dataGridViewContent.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContent_CellMouseLeave);
+            // 
+            // ButtonSearch
+            // 
+            this.ButtonSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.ButtonSearch.IconColor = System.Drawing.Color.Black;
+            this.ButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonSearch.IconSize = 45;
+            this.ButtonSearch.Location = new System.Drawing.Point(13, 146);
+            this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.Size = new System.Drawing.Size(180, 45);
+            this.ButtonSearch.TabIndex = 3;
+            this.ButtonSearch.Text = "Tìm Kiếm";
+            this.ButtonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonSearch.UseVisualStyleBackColor = true;
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
+            // ButtonDel
+            // 
+            this.ButtonDel.BackColor = System.Drawing.Color.White;
+            this.ButtonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDel.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.ButtonDel.IconColor = System.Drawing.Color.Black;
+            this.ButtonDel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonDel.IconSize = 45;
+            this.ButtonDel.Location = new System.Drawing.Point(21, 190);
+            this.ButtonDel.Name = "ButtonDel";
+            this.ButtonDel.Size = new System.Drawing.Size(193, 59);
+            this.ButtonDel.TabIndex = 1;
+            this.ButtonDel.Text = "Xóa Sinh Viên";
+            this.ButtonDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDel.UseVisualStyleBackColor = false;
+            this.ButtonDel.Click += new System.EventHandler(this.ButtonDel_Click);
+            // 
+            // ButtonUpdate
+            // 
+            this.ButtonUpdate.BackColor = System.Drawing.Color.White;
+            this.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.Squarespace;
+            this.ButtonUpdate.IconColor = System.Drawing.Color.Black;
+            this.ButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonUpdate.IconSize = 45;
+            this.ButtonUpdate.Location = new System.Drawing.Point(21, 114);
+            this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.Size = new System.Drawing.Size(193, 59);
+            this.ButtonUpdate.TabIndex = 1;
+            this.ButtonUpdate.Text = "Cập Nhật";
+            this.ButtonUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonUpdate.UseVisualStyleBackColor = false;
+            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
+            // 
+            // ButtonAdd
+            // 
+            this.ButtonAdd.BackColor = System.Drawing.Color.White;
+            this.ButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAdd.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.ButtonAdd.IconColor = System.Drawing.Color.Black;
+            this.ButtonAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonAdd.IconSize = 45;
+            this.ButtonAdd.Location = new System.Drawing.Point(21, 40);
+            this.ButtonAdd.Name = "ButtonAdd";
+            this.ButtonAdd.Size = new System.Drawing.Size(193, 59);
+            this.ButtonAdd.TabIndex = 0;
+            this.ButtonAdd.Text = "Thêm Mới";
+            this.ButtonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonAdd.UseVisualStyleBackColor = false;
+            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // fHoSoSinhVien
             // 

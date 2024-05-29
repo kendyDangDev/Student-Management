@@ -86,7 +86,7 @@ namespace GUI
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
+            //childForm.Dock = DockStyle.Fill;
             panelContent.Controls.Add(childForm);
             panelContent.Tag = childForm;
             childForm.BringToFront();

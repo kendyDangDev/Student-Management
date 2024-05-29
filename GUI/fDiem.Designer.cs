@@ -47,12 +47,15 @@
             this.ButtonUpdate = new FontAwesome.Sharp.IconButton();
             this.ButtonAdd = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxLop = new System.Windows.Forms.ComboBox();
+            this.comboBoxSinhVien = new System.Windows.Forms.ComboBox();
             this.textBoxGHP = new System.Windows.Forms.TextBox();
             this.labelGHP = new System.Windows.Forms.Label();
             this.comboBoxMonHoc = new System.Windows.Forms.ComboBox();
             this.textBoxKTHP = new System.Windows.Forms.TextBox();
             this.labelKTHP = new System.Windows.Forms.Label();
             this.labelMonHoc = new System.Windows.Forms.Label();
+            this.labelLop = new System.Windows.Forms.Label();
             this.labelMaSV = new System.Windows.Forms.Label();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
             this.comboBoxValueSearch = new System.Windows.Forms.ComboBox();
@@ -60,9 +63,6 @@
             this.ButtonSearch = new FontAwesome.Sharp.IconButton();
             this.dataGridViewContent = new Guna.UI2.WinForms.Guna2DataGridView();
             this.iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
-            this.labelLop = new System.Windows.Forms.Label();
-            this.comboBoxSinhVien = new System.Windows.Forms.ComboBox();
-            this.comboBoxLop = new System.Windows.Forms.ComboBox();
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -270,7 +270,7 @@
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(120, 45);
             this.ButtonAdd.TabIndex = 7;
-            this.ButtonAdd.Text = "Thêm Mới";
+            this.ButtonAdd.Text = "Nhập Điểm";
             this.ButtonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonAdd.UseVisualStyleBackColor = false;
@@ -295,6 +295,23 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập Điểm";
+            // 
+            // comboBoxLop
+            // 
+            this.comboBoxLop.FormattingEnabled = true;
+            this.comboBoxLop.Location = new System.Drawing.Point(130, 31);
+            this.comboBoxLop.Name = "comboBoxLop";
+            this.comboBoxLop.Size = new System.Drawing.Size(144, 27);
+            this.comboBoxLop.TabIndex = 10;
+            this.comboBoxLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxLop_SelectedIndexChanged);
+            // 
+            // comboBoxSinhVien
+            // 
+            this.comboBoxSinhVien.FormattingEnabled = true;
+            this.comboBoxSinhVien.Location = new System.Drawing.Point(130, 68);
+            this.comboBoxSinhVien.Name = "comboBoxSinhVien";
+            this.comboBoxSinhVien.Size = new System.Drawing.Size(144, 27);
+            this.comboBoxSinhVien.TabIndex = 9;
             // 
             // textBoxGHP
             // 
@@ -352,6 +369,16 @@
             this.labelMonHoc.TabIndex = 2;
             this.labelMonHoc.Text = "Học Phần:";
             this.labelMonHoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelLop
+            // 
+            this.labelLop.AutoSize = true;
+            this.labelLop.Location = new System.Drawing.Point(16, 39);
+            this.labelLop.Name = "labelLop";
+            this.labelLop.Size = new System.Drawing.Size(37, 19);
+            this.labelLop.TabIndex = 2;
+            this.labelLop.Text = "Lớp:";
+            this.labelLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelMaSV
             // 
@@ -417,7 +444,7 @@
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(180, 45);
             this.ButtonSearch.TabIndex = 3;
-            this.ButtonSearch.Text = "Tìm Kiếm";
+            this.ButtonSearch.Text = "Tra Cứu";
             this.ButtonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonSearch.UseVisualStyleBackColor = true;
@@ -498,33 +525,6 @@
             this.iconSplitButton1.Rotation = 0D;
             this.iconSplitButton1.Size = new System.Drawing.Size(23, 23);
             this.iconSplitButton1.Text = "iconSplitButton1";
-            // 
-            // labelLop
-            // 
-            this.labelLop.AutoSize = true;
-            this.labelLop.Location = new System.Drawing.Point(16, 39);
-            this.labelLop.Name = "labelLop";
-            this.labelLop.Size = new System.Drawing.Size(37, 19);
-            this.labelLop.TabIndex = 2;
-            this.labelLop.Text = "Lớp:";
-            this.labelLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // comboBoxSinhVien
-            // 
-            this.comboBoxSinhVien.FormattingEnabled = true;
-            this.comboBoxSinhVien.Location = new System.Drawing.Point(130, 68);
-            this.comboBoxSinhVien.Name = "comboBoxSinhVien";
-            this.comboBoxSinhVien.Size = new System.Drawing.Size(144, 27);
-            this.comboBoxSinhVien.TabIndex = 9;
-            // 
-            // comboBoxLop
-            // 
-            this.comboBoxLop.FormattingEnabled = true;
-            this.comboBoxLop.Location = new System.Drawing.Point(130, 31);
-            this.comboBoxLop.Name = "comboBoxLop";
-            this.comboBoxLop.Size = new System.Drawing.Size(144, 27);
-            this.comboBoxLop.TabIndex = 10;
-            this.comboBoxLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxLop_SelectedIndexChanged);
             // 
             // fDiem
             // 

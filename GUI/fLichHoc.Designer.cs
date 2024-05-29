@@ -448,7 +448,7 @@
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(160, 59);
             this.ButtonAdd.TabIndex = 4;
-            this.ButtonAdd.Text = "Thêm Mới";
+            this.ButtonAdd.Text = "Xếp Lịch";
             this.ButtonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonAdd.UseVisualStyleBackColor = false;
