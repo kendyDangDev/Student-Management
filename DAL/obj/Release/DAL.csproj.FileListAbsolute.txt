@@ -1,0 +1,6 @@
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\DAL\bin\Release\DAL.dll
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\DAL\bin\Release\DAL.pdb
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\DAL\obj\Release\DAL.csproj.AssemblyReference.cache
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\DAL\obj\Release\DAL.dll
+C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\DAL\obj\Release\DAL.pdb

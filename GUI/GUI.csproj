@@ -242,17 +242,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="StudentDetail.cs">
+    <Compile Include="fStudentDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentDetail.Designer.cs">
-      <DependentUpon>StudentDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
+    <Compile Include="fStudentDetail.Designer.cs">
+      <DependentUpon>fStudentDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCHome.cs">
       <SubType>UserControl</SubType>
@@ -322,11 +316,8 @@
     <EmbeddedResource Include="CustomControl\KDTextBox.resx">
       <DependentUpon>KDTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentDetail.resx">
-      <DependentUpon>StudentDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test.resx">
-      <DependentUpon>test.cs</DependentUpon>
+    <EmbeddedResource Include="fStudentDetail.resx">
+      <DependentUpon>fStudentDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
