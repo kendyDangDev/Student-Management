@@ -312,4 +312,3 @@ C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\GUI\
 C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\GUI\obj\Debug\GUI.pdb
 C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\GUI\obj\Debug\GUI.StudentDetail.resources
 C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\GUI\obj\Debug\GUI.frmMessageBox.resources
-C:\Users\KendyDang\OneDrive\Máy tính\UTEHY\Kỳ 4\Đồ Án 1\Đồ án 1\GUI\obj\Debug\GUI.test.resources

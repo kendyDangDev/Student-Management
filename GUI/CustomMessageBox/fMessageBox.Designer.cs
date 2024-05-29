@@ -179,7 +179,7 @@ namespace GUI
             // 
             this.ptbIcon.Image = global::GUI.Properties.Resources.def;
             this.ptbIcon.ImageRotate = 0F;
-            this.ptbIcon.Location = new System.Drawing.Point(19, 13);
+            this.ptbIcon.Location = new System.Drawing.Point(19, 22);
             this.ptbIcon.Margin = new System.Windows.Forms.Padding(2);
             this.ptbIcon.Name = "ptbIcon";
             this.ptbIcon.Size = new System.Drawing.Size(55, 55);

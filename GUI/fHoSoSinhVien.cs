@@ -33,7 +33,7 @@ namespace GUI
         {
             InitializeComponent();
             LoadSinhVien();
-       
+
             TimePickerBirthday.CustomFormat = "dd/MM/yyyy";
             TimePickerBirthdayNT.CustomFormat = "dd/MM/yyyy";
             LoadClassList();
@@ -257,7 +257,7 @@ namespace GUI
                 string.IsNullOrWhiteSpace(hdt) ||
                 string.IsNullOrWhiteSpace(namnhaphoc))
             {
-   
+
                 MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
@@ -266,8 +266,17 @@ namespace GUI
                 if (message == "")
                 {
                     MyMessageBox.Show("Cập Nhật Thông Tin Sinh Viên Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    BUSStudent.Instance.GetAllStudent(dataGridViewContent);
                     //dataGridViewContent.Columns.RemoveAt(0);
+                    if (type.ToLower() == "user")
+                    {
+                        BUSStudent.Instance.GetStudent(dataGridViewContent, username);
+
+                    }
+                    else
+                    {
+                        BUSStudent.Instance.GetAllStudent(dataGridViewContent);
+                    }
+
 
                 }
                 else
@@ -281,7 +290,7 @@ namespace GUI
         int index = -1;
         private void dataGridViewContent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void ButtonDel_Click(object sender, EventArgs e)
@@ -341,11 +350,11 @@ namespace GUI
                 }
                 else
                 {
-           
+
                     BUSStudent.Instance.FilterStudent(dataGridViewContent, columnsearch, valueSearch);
                 }
             }
-            
+
 
         }
 
@@ -364,7 +373,7 @@ namespace GUI
 
         private void dataGridViewContent_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex != -1)
+            if (e.RowIndex != -1)
             {
                 index = e.RowIndex;
                 textBoxMaSV.Text = dataGridViewContent.Rows[index].Cells[1].Value.ToString();
@@ -374,7 +383,7 @@ namespace GUI
                 string dateStringsv = dataGridViewContent.Rows[index].Cells[5].Value.ToString();
                 if (DateTime.TryParseExact(dateStringsv, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime svparsedDate))
                 {
-  
+
                     string newDateString = svparsedDate.ToString("MM/dd/yyyy");
                     TimePickerBirthday.Value = DateTime.ParseExact(newDateString, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 }
@@ -414,14 +423,14 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-    
+
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = color;
             }
         }
 
         private void dataGridViewContent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-         
+
             if (e.RowIndex != -1)
             {
                 index = e.RowIndex;
@@ -429,26 +438,26 @@ namespace GUI
                 string hoten = dataGridViewContent.Rows[index].Cells[2].Value.ToString();
                 string gioitinh = dataGridViewContent.Rows[index].Cells[3].Value.ToString();
                 string dantoc = dataGridViewContent.Rows[index].Cells[4].Value.ToString();
-            
+
                 DateTime ngaysinh = DateTime.Parse(TimePickerBirthday.Value.ToString());
 
                 string diachi = dataGridViewContent.Rows[index].Cells[6].Value.ToString();
-                string sdt= dataGridViewContent.Rows[index].Cells[7].Value.ToString();
+                string sdt = dataGridViewContent.Rows[index].Cells[7].Value.ToString();
                 string email = dataGridViewContent.Rows[index].Cells[8].Value.ToString();
                 string cccd = dataGridViewContent.Rows[index].Cells[9].Value.ToString();
-               string nienkhoa = dataGridViewContent.Rows[index].Cells[10].Value.ToString();
+                string nienkhoa = dataGridViewContent.Rows[index].Cells[10].Value.ToString();
                 string namnhaphoc = dataGridViewContent.Rows[index].Cells[11].Value.ToString();
-                string hedaotao= dataGridViewContent.Rows[index].Cells[12].Value.ToString();
+                string hedaotao = dataGridViewContent.Rows[index].Cells[12].Value.ToString();
 
                 string malop = dataGridViewContent.Rows[index].Cells[13].Value.ToString();
                 string hotenNT = dataGridViewContent.Rows[index].Cells[15].Value.ToString();
                 string mqh = dataGridViewContent.Rows[index].Cells[16].Value.ToString();
-                       
+
                 DateTime ngaysinhNT = TimePickerBirthdayNT.Value;
 
                 string sdtNT = dataGridViewContent.Rows[index].Cells[18].Value.ToString();
 
-                StudentDetail.Instance.loadData(masv, hoten, gioitinh, dantoc, ngaysinh, diachi, sdt, email, cccd, nienkhoa, namnhaphoc, malop, hotenNT, mqh, ngaysinhNT, sdtNT, hedaotao );
+                StudentDetail.Instance.loadData(masv, hoten, gioitinh, dantoc, ngaysinh, diachi, sdt, email, cccd, nienkhoa, namnhaphoc, malop, hotenNT, mqh, ngaysinhNT, sdtNT, hedaotao);
                 StudentDetail.Instance.Show();
 
             }

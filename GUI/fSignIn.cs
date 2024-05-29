@@ -40,27 +40,40 @@ namespace GUI
         {
             string username = textBoxUserName.Text;
             string password = textBoxPassword.Text;
-            if (isLogin(username, password))
-            {
-                string message = BUSAccount.Instance.CheckAccountType(username);
-                if (message == "")
-                {
-                    LoggedInUsername = username;
-                    BUSAccount.Instance.UpdateLoginLog(username);
-                    accountType = BUSAccount.Instance.GetAccountTypeLogin(username);
-                    userNameLogin = username;
-                 
-                    LoginRequested?.Invoke(this, EventArgs.Empty);
-                }
-                else
-                {
-                    MyMessageBox.Show($"Đăng Nhập Thất Bại! {message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
 
+     
+            if (string.IsNullOrEmpty(username) || username == "Username")
+            {
+                MyMessageBox.Show("Vui lòng nhập tài khoản trước khi đăng nhập", "Thông Báo", MessageBoxButtons.OK);
+            }
+            else if (string.IsNullOrEmpty(password) || password == "Password")
+            {
+                MyMessageBox.Show("Vui lòng nhập mật khẩu trước khi đăng nhập", "Thông Báo", MessageBoxButtons.OK);
             }
             else
             {
-                MyMessageBox.Show("Tài Khoản Hoặc Mật Khẩu Không Chính Xác", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (isLogin(username, password))
+                {
+                    string message = BUSAccount.Instance.CheckAccountType(username);
+                    if (message == "")
+                    {
+                        LoggedInUsername = username;
+                        BUSAccount.Instance.UpdateLoginLog(username);
+                        accountType = BUSAccount.Instance.GetAccountTypeLogin(username);
+                        userNameLogin = username;
+
+                        LoginRequested?.Invoke(this, EventArgs.Empty);
+                    }
+                    else
+                    {
+                        MyMessageBox.Show($"Đăng Nhập Thất Bại! {message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                }
+                else
+                {
+                    MyMessageBox.Show("Tài Khoản Hoặc Mật Khẩu Không Chính Xác", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
             }
         }
 
