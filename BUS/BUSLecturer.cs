@@ -56,6 +56,23 @@ namespace BUS
             cbx.DataSource = classList;
         }
 
+        public static bool IsValidCCCD(string cccd)
+        {
+            if (cccd.Length != 12)
+            {
+                return false;
+            }
+
+            foreach (char c in cccd)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
 
         public string InsertGiangVien(string maGV,
                                     string hoten,
@@ -68,15 +85,17 @@ namespace BUS
                                     string makhoa)
         {
             Regex regexString = new Regex(@"^[\p{L} ]+$");
-            Regex regexNumber = new Regex("^[0-9]+$");
+            Regex regexNumber = new Regex(@"^0\d{9}$");
             if (!regexString.IsMatch(hoten))
             {
                 return "Họ Tên Không Hợp Lệ";
             }
-
-            if (!regexNumber.IsMatch(sdt) || !regexNumber.IsMatch(socccd) || !regexNumber.IsMatch(sdt))
+            if (!IsValidCCCD(socccd)){
+                return "Số căn cước công dân không hợp lệ (12 số)";
+            }
+            if (!regexNumber.IsMatch(sdt)  || !regexNumber.IsMatch(sdt))
             {
-                return "Số Điện Thoại Hoặc Số CCCD Không Hợp Lệ";
+                return "Số Điện Thoại Không Hợp Lệ (10 số)";
             }
             if (DateTime.Now.Year - ngaysinh.Year < 1)
             {
@@ -125,10 +144,13 @@ namespace BUS
             {
                 return "Họ Tên Không Hợp Lệ";
             }
-
-            if (!regexNumber.IsMatch(sdt) || !regexNumber.IsMatch(socccd) || !regexNumber.IsMatch(sdt))
+            if (!IsValidCCCD(socccd))
             {
-                return "Số Điện Thoại Hoặc Số CCCD Không Hợp Lệ";
+                return "Số căn cước công dân không hợp lệ (12 số)";
+            }
+            if (!regexNumber.IsMatch(sdt) || !regexNumber.IsMatch(sdt))
+            {
+                return "Số Điện Thoại Không Hợp Lệ (10 số)";
             }
             if (DateTime.Now.Year - ngaysinh.Year < 1)
             {

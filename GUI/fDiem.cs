@@ -252,7 +252,7 @@ namespace GUI
                 valueSearch = comboBoxValueSearch.SelectedItem.ToString();
 
             }
-            if (string.IsNullOrEmpty(valueSearch))
+            if (string.IsNullOrEmpty(valueSearch) || columnsearch == valueSearch)
             {
                 MyMessageBox.Show("Nhập Giá Trị Cần Tìm Kiếm");
             }
@@ -260,8 +260,8 @@ namespace GUI
             {
                 //Ok
                 BUSScore.Instance.FilterScore(dataGridViewContent, columnsearch, valueSearch);
+                dataGridViewContent.Columns.RemoveAt(1);
             }
-            dataGridViewContent.Columns.RemoveAt(1);
 
         }
 
@@ -317,6 +317,7 @@ namespace GUI
             if (e.RowIndex != -1)
             {
                 comboBoxSinhVien.Text = dataGridViewContent.Rows[e.RowIndex].Cells[2].Value.ToString();
+                comboBoxLop.Text = dataGridViewContent.Rows[e.RowIndex].Cells[4].Value.ToString();
                 comboBoxMonHoc.Text = dataGridViewContent.Rows[e.RowIndex].Cells[5].Value.ToString();
                 textBoxGHP.Text = dataGridViewContent.Rows[e.RowIndex].Cells[6].Value.ToString();
                 textBoxKTHP.Text = dataGridViewContent.Rows[e.RowIndex].Cells[7].Value.ToString();

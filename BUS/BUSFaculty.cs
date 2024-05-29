@@ -72,10 +72,10 @@ namespace BUS
             {
                 return "Địa Chỉ Email Không Hợp Lệ";
             }
-            Regex regexNumber = new Regex("^[0-9]+$");
+            Regex regexNumber = new Regex(@"^0\d{9}$");
             if (!regexNumber.IsMatch(sDT))
             {
-                return "Số Điện Thoại Không Hợp Lệ";
+                return "Số Điện Thoại Không Hợp Lệ (10 số)";
             }
             if (DALFaculty.Instance.GetFacultyByID(maKhoa).Rows.Count > 0)
             {

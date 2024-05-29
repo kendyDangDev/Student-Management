@@ -335,7 +335,7 @@ namespace GUI
                 }
                 string valueSearch = textBoxValue.Text;
 
-                if (string.IsNullOrEmpty(valueSearch))
+                if (string.IsNullOrEmpty(valueSearch) || columnsearch == valueSearch)
                 {
                     MyMessageBox.Show("Vui lòng nhập giá trị tìm kiếm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

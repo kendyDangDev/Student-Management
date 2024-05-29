@@ -35,7 +35,21 @@ namespace BUS
             return DALStudent.Instance.GetAllStudent();
 
         }
-
+        public static bool IsValidCCCD(string cccd)
+        {
+            if (cccd.Length != 12)
+            {
+                return false;
+            }
+            foreach (char c in cccd)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         public string AddHoSoSinhVien(string masv,
                                     string hoten,
                                     string gioitinh,
@@ -62,9 +76,13 @@ namespace BUS
                 return "Họ Tên Không Hợp Lệ";
             }
 
-            if (!regexNumber.IsMatch(sdt) || !regexNumber.IsMatch(socccd) || !regexNumber.IsMatch(sdtnt))
+            if (!regexNumber.IsMatch(sdt) || !regexNumber.IsMatch(sdtnt))
             {
-                return "Số Điện Thoại Hoặc Số CCCD Không Hợp Lệ";
+                return "Số Điện Thoại Không Hợp Lệ (10 số)";
+            }
+            if (!IsValidCCCD(socccd))
+            {
+                return "Số CCCD không đúng định dạng (12 số)";
             }
             if (!regexEmail.IsMatch(email))
             {
@@ -72,7 +90,7 @@ namespace BUS
             }
             if (DateTime.Now.Year - ngaysinh.Year < 18)
             {
-                return "Ngày Sinh Không Hợp Lệ. Bạn Chưa Đủ 18 Tuổi";
+                return "Ngày Sinh Không Hợp Lệ. Chưa Đủ 18 Tuổi";
             }
 
             if (DALStudent.Instance.GetStudentByID(masv).Rows.Count == 0)
@@ -119,16 +137,20 @@ namespace BUS
                                     string sdtnt)
         {
             Regex regexString = new Regex(@"^[\p{L} ]+$");
-            Regex regexNumber = new Regex("^[0-9]+$");
+            Regex regexNumber = new Regex(@"^0\d{9}");
             Regex regexEmail = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
             if (!regexString.IsMatch(hoten))
             {
                 return "Họ Tên Không Hợp Lệ";
             }
 
-            if (!regexNumber.IsMatch(sdt) || !regexNumber.IsMatch(socccd) || !regexNumber.IsMatch(sdtnt))
+            if (!regexNumber.IsMatch(sdt) || !regexNumber.IsMatch(sdtnt))
             {
-                return "Số Điện Thoại Hoặc Số CCCD Không Hợp Lệ";
+                return "Số Điện Thoại Không Hợp Lệ (10 số)";
+            }
+            if (!IsValidCCCD(socccd))
+            {
+                return "Số CCCD không đúng định dạng (12 số)";
             }
             if (!regexEmail.IsMatch(email))
             {
@@ -136,7 +158,7 @@ namespace BUS
             }
             if (DateTime.Now.Year - ngaysinh.Year < 18)
             {
-                return "Ngày Sinh Không Hợp Lệ. Bạn Chưa Đủ 18 Tuổi";
+                return "Ngày Sinh Không Hợp Lệ. Chưa Đủ 18 Tuổi";
             }
 
             if (!(DALStudent.Instance.GetStudentByID(masv).Rows.Count == 0))
