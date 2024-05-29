@@ -76,7 +76,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -115,7 +115,7 @@ namespace GUI
 
                 {
                     // Hiển thị thông báo hoặc thực hiện các hành động xử lý khi thông tin chưa được nhập đủ
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -124,14 +124,14 @@ namespace GUI
                     string message = BUSLecturer.Instance.InsertGiangVien(maGV, hoten, gioitinh, trinhdo, ngaysinh, diachi, socccd, sdt, makhoa);
                     if (message == "")
                     {
-                        MessageBox.Show("Thêm Giảng Viên Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show("Thêm Giảng Viên Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSLecturer.Instance.GetAllGiangVien(dataGridViewContent);
                         
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -142,7 +142,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -181,7 +181,7 @@ namespace GUI
 
                 {
                     // Hiển thị thông báo hoặc thực hiện các hành động xử lý khi thông tin chưa được nhập đủ
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -189,14 +189,14 @@ namespace GUI
                     string message = BUSLecturer.Instance.UpdateGiangVien(maGV, hoten, gioitinh, trinhdo, ngaysinh, diachi, socccd, sdt, makhoa);
                     if (message == "")
                     {
-                        MessageBox.Show("Cập Nhật Thông Tin Giảng Viên Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show("Cập Nhật Thông Tin Giảng Viên Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSLecturer.Instance.GetAllGiangVien(dataGridViewContent);
                         
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -207,24 +207,24 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Giảng Viên Có Mã: {textBoxMaGV.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MyMessageBox.Show($"Bạn Có Chắc Chắn Muốn Giảng Viên Có Mã: {textBoxMaGV.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (isDelete(textBoxMaGV.Text))
                     {
-                        MessageBox.Show($"Xóa Giảng Viên Có Mã: {textBoxMaGV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Xóa Giảng Viên Có Mã: {textBoxMaGV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadGiangVien();
                         
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. Không Tồn Tại Giảng Viên Có Mã: {textBoxMaGV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. Không Tồn Tại Giảng Viên Có Mã: {textBoxMaGV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -246,14 +246,13 @@ namespace GUI
 
             if (string.IsNullOrEmpty(valueSearch))
             {
-                MessageBox.Show("Nhập Giá Trị Cần Tìm Kiếm");
+                MyMessageBox.Show("vui lòng nhập giá trị cần tìm kiếm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 //Ok
                 BUSLecturer.Instance.FilterLectures(dataGridViewContent, columnsearch, valueSearch);
             }
-            
 
         }
 

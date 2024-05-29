@@ -81,7 +81,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -95,25 +95,25 @@ namespace GUI
 
                 if (string.IsNullOrEmpty(usernameTK))
                 {
-                    MessageBox.Show("Vui Lòng Nhập Tài Khoản Cần Cấp Quyền.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui Lòng Nhập Tài Khoản Cần Cấp Quyền.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     if(username.ToLower() != "admin")
                     {
-                        MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này???.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này???.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     string message = BUSAccount.Instance.GrantPermission(usernameTK, accountType);
                     if (message == "")
                     {
-                        MessageBox.Show($"Cập Quyền Cho Tài Khoản: {usernameTK} Với Quyền: {accountType} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Cập Quyền Cho Tài Khoản: {usernameTK} Với Quyền: {accountType} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllAccount();
                         dataGridViewContent.Columns.RemoveAt(1);
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -124,23 +124,23 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Username: {textBoxUsername.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MyMessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Username: {textBoxUsername.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     string message = BUSAccount.Instance.DeleteAccount(textBoxUsername.Text);
                     if (message == "")
                     {
-                        MessageBox.Show($"Xóa Thành Công Username: {textBoxUsername.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Xóa Thành Công Username: {textBoxUsername.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllAccount();
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }

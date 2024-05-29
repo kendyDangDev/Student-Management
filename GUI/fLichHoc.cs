@@ -125,7 +125,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -191,12 +191,12 @@ namespace GUI
                 string message = BUSSchedule.Instance.InsertLichHoc(thu, tuan, tietBD, sotiet, phongHoc, maLop, maHP, maGV);
                 if (message == "")
                 {
-                    MessageBox.Show("Thêm Lịch Học Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MyMessageBox.Show("Thêm Lịch Học Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadScheduleByWeekandClass();
                 }
                 else
                 {
-                    MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
             }
@@ -240,7 +240,7 @@ namespace GUI
                 week = Convert(input);
                 if(BUSStudent.Instance.GetMalopByMaSV(username) == "")
                 {
-                    MessageBox.Show("Bạn Hiện Không Thuộc Bất Kỳ Lớp Nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MyMessageBox.Show("Bạn Hiện Không Thuộc Bất Kỳ Lớp Nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 Class = BUSStudent.Instance.GetMalopByMaSV(username);
@@ -298,25 +298,25 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
                 int id = int.Parse(labelID.Text);
-                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Lịch Học Này Không", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MyMessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Lịch Học Này Không", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     int change = BUSSchedule.Instance.DeleteSchedule(id);
 
                     if (change > 0)
                     {
-                        MessageBox.Show($"Xóa Lịch Học Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Xóa Lịch Học Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadScheduleByWeekandClass();
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. Xóa Lịch Học Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. Xóa Lịch Học Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -327,7 +327,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -395,12 +395,12 @@ namespace GUI
                 string message = BUSSchedule.Instance.UpdateLichHoc(thu, tuan, tietBD, sotiet, phongHoc, maLop, maHP, maGV, id);
                 if (message == "")
                 {
-                    MessageBox.Show("Cập Nhật Lịch Học Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MyMessageBox.Show("Cập Nhật Lịch Học Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadScheduleByWeekandClass();
                 }
                 else
                 {
-                    MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
             }

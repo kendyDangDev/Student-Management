@@ -27,7 +27,7 @@ namespace GUI
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(phonenumber) || string.IsNullOrEmpty(email))
             {
-                MessageBox.Show("Vui Lòng Nhập Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Vui Lòng Nhập Đủ Thông Tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -37,12 +37,12 @@ namespace GUI
                     string getPassword = BUSAccount.Instance.GetPassword(username, phonenumber, email);
                     if (getPassword == "")
                     {
-                        MessageBox.Show("Số Điện Thoại Hoặc Địa Chỉ Email Không Khớp Với Tài Khoản. Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show("Số Điện Thoại Hoặc Địa Chỉ Email Không Khớp Với Tài Khoản. Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     else
                     {
-                        MessageBox.Show($"Mật Khẩu của bạn là: {getPassword}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Mật Khẩu của bạn là: {getPassword}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         TextBoxUsername.Text  = null;
                         TextBoxPhoneNumber.Text = null;
                         TextBoxEmail.Text = null;
@@ -50,7 +50,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Tài Khoản Không Tồn Tại. Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Tài Khoản Không Tồn Tại. Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }

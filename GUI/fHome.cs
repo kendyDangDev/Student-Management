@@ -275,7 +275,7 @@ namespace GUI
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn Có Chắc Chắn Muốn Đăng Xuất Không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult result = MyMessageBox.Show("Bạn Có Chắc Chắn Muốn Đăng Xuất Không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
                 this.Hide();
@@ -287,7 +287,7 @@ namespace GUI
 
         private void fHome_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn đóng ứng dụng?", "Xác nhận đóng", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult result = MyMessageBox.Show("Bạn có chắc muốn đóng ứng dụng?", "Xác nhận đóng", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (result != DialogResult.OK)
             {
@@ -441,6 +441,11 @@ namespace GUI
         }
         private void buttonExport_Click(object sender, EventArgs e)
         {
+            
+            
+            
+            
+            
             Form latestForm = FormHelper.GetLatestOpenedForm();
             string currentForm = latestForm.Name;
             string title;

@@ -90,7 +90,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -150,21 +150,21 @@ namespace GUI
                     string.IsNullOrWhiteSpace(namnhaphoc))
                 {
                     // Hiển thị thông báo hoặc thực hiện các hành động xử lý khi thông tin chưa được nhập đủ
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     string message = BUSStudent.Instance.AddHoSoSinhVien(masv, hoten, gioitinh, dantoc, ngaysinh, diachi, sdt, email, socccd, nienkhoa, namnhaphoc, malop, hotennt, quanhe, ngaysinhnt, sdtnnt);
                     if (message == "")
                     {
-                        MessageBox.Show("Thêm Sinh Viên Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show("Thêm Sinh Viên Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSStudent.Instance.GetAllStudent(dataGridViewContent);
                         //dataGridViewContent.Columns.RemoveAt(0);
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -258,21 +258,21 @@ namespace GUI
                 string.IsNullOrWhiteSpace(namnhaphoc))
             {
    
-                MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 string message = BUSStudent.Instance.UpdateHoSoSinhVien(masv, hoten, gioitinh, dantoc, ngaysinh, diachi, sdt, email, socccd, nienkhoa, namnhaphoc, malop, hotennt, quanhe, ngaysinhnt, sdtnnt);
                 if (message == "")
                 {
-                    MessageBox.Show("Cập Nhật Thông Tin Sinh Viên Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MyMessageBox.Show("Cập Nhật Thông Tin Sinh Viên Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BUSStudent.Instance.GetAllStudent(dataGridViewContent);
                     //dataGridViewContent.Columns.RemoveAt(0);
 
                 }
                 else
                 {
-                    MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
             }
@@ -288,24 +288,24 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MyMessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (isDelete(textBoxMaSV.Text))
                     {
-                        MessageBox.Show($"Xóa Thành Công Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Xóa Thành Công Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadSinhVien();
                         //dataGridViewContent.Columns.RemoveAt(0);
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. Không Tồn Tại Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. Không Tồn Tại Sinh Viên Có Mã: {textBoxMaSV.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -322,7 +322,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -337,7 +337,7 @@ namespace GUI
 
                 if (string.IsNullOrEmpty(valueSearch))
                 {
-                    MessageBox.Show("Nhập Giá Trị Cần Tìm Kiếm");
+                    MyMessageBox.Show("Vui lòng nhập giá trị tìm kiếm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

@@ -28,7 +28,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Mật Khẩu Xác Nhận Không Khớp");
+                MyMessageBox.Show("Mật Khẩu Xác Nhận Không Khớp");
             }
         }
     }

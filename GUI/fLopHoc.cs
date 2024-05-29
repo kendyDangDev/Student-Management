@@ -107,7 +107,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -136,7 +136,7 @@ namespace GUI
                 if (string.IsNullOrEmpty(maLop) || string.IsNullOrEmpty(tenLop) || string.IsNullOrEmpty(tenchuyennganh)
                     || string.IsNullOrEmpty(hedaotao) || string.IsNullOrEmpty(tenGVCN))
                 {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 else
@@ -144,14 +144,14 @@ namespace GUI
                     string message = BUSClass.Instance.InsertClass(maLop, tenLop, hedaotao, maGV, maChuyenNganh);
                     if (message == "")
                     {
-                        MessageBox.Show("Thêm Lớp Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show("Thêm Lớp Mới Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllClass();
                         
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -162,7 +162,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -191,7 +191,7 @@ namespace GUI
                 if (string.IsNullOrEmpty(maLop) || string.IsNullOrEmpty(tenLop) || string.IsNullOrEmpty(tenchuyennganh)
                      || string.IsNullOrEmpty(hedaotao) || string.IsNullOrEmpty(tenGVCN))
                 {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 else
@@ -202,14 +202,14 @@ namespace GUI
                     string message = BUSClass.Instance.UpdateClass(maLop, tenLop, hedaotao, maGV, maChuyenNganh);
                     if (message == "")
                     {
-                        MessageBox.Show("Cập Nhật Thông Tin Lớp Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show("Cập Nhật Thông Tin Lớp Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllClass();
                         
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -220,24 +220,24 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Lớp Có Mã: {textBoxMaLop.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MyMessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Lớp Có Mã: {textBoxMaLop.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (BUSClass.Instance.DeleteClass(textBoxMaLop.Text) > 0)
                     {
-                        MessageBox.Show($"Xóa Thành Công Lớp Có Mã: {textBoxMaLop.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Xóa Thành Công Lớp Có Mã: {textBoxMaLop.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllClass();
                         
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. Không Tồn Tại Lớp Có Mã: {textBoxMaLop.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. Không Tồn Tại Lớp Có Mã: {textBoxMaLop.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -264,7 +264,7 @@ namespace GUI
             }
             if (string.IsNullOrEmpty(valueSearch))
             {
-                MessageBox.Show("Nhập Giá Trị Cần Tìm Kiếm");
+                MyMessageBox.Show("vui lòng nhập giá trị cần tìm kiếm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

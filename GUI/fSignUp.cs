@@ -36,20 +36,20 @@ namespace GUI
                 || string.IsNullOrWhiteSpace(confirmpass) || string.IsNullOrWhiteSpace(phoneNumber) || string.IsNullOrWhiteSpace(email))
             {
 
-                MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 if (confirmpass != password)
                 {
-                    MessageBox.Show("Mật Khẩu Xác Nhận Không Chính Xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Mật Khẩu Xác Nhận Không Chính Xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     string message = BUSAccount.Instance.Createaccount(username, password, phoneNumber, email); ;
                     if (message == "")
                     {
-                        MessageBox.Show("Tạo Tài Khoản Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show("Tạo Tài Khoản Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         TextBoxConfirmPass.Text = "";
                         TextBoxUsername.Text = "";
                         TextBoxPassword.Text = "";
@@ -58,7 +58,7 @@ namespace GUI
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }

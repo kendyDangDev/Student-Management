@@ -66,7 +66,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -87,7 +87,7 @@ namespace GUI
                 }
                 if (string.IsNullOrEmpty(mahp) || string.IsNullOrEmpty(tenhp) || string.IsNullOrEmpty(loaiHP) || string.IsNullOrEmpty(tenKhoa))
                 {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 else
@@ -95,7 +95,7 @@ namespace GUI
                     string maKhoa = BUSFaculty.Instance.GetIDByName(tenKhoa);
                     if (string.IsNullOrEmpty(numericUpDownSoTC.Text) || numericUpDownSoTC.Value == 0)
                     {
-                        MessageBox.Show("Số Tín Chỉ Không Hợp Lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show("Số Tín Chỉ Không Hợp Lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     else
@@ -104,14 +104,14 @@ namespace GUI
                         string message = BUSSubject.Instance.InsertSubject(mahp, tenhp, sotc, loaiHP, maKhoa);
                         if (message == "")
                         {
-                            MessageBox.Show($"Thêm Học Phần Có Mã {mahp} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MyMessageBox.Show($"Thêm Học Phần Có Mã {mahp} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadAllHocPhan();
                             dataGridViewContent.Columns.RemoveAt(1);
 
                         }
                         else
                         {
-                            MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                         }
                     }
@@ -123,7 +123,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -145,7 +145,7 @@ namespace GUI
 
                 if (string.IsNullOrEmpty(mahp) || string.IsNullOrEmpty(tenhp) || string.IsNullOrEmpty(loaiHP) || string.IsNullOrEmpty(tenKhoa))
                 {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -153,7 +153,7 @@ namespace GUI
                     string maKhoa = BUSFaculty.Instance.GetIDByName(tenKhoa);
                     if (string.IsNullOrEmpty(numericUpDownSoTC.Text) || numericUpDownSoTC.Value == 0)
                     {
-                        MessageBox.Show("Số Tín Chỉ Không Hợp Lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show("Số Tín Chỉ Không Hợp Lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     else
@@ -162,14 +162,14 @@ namespace GUI
                         string message = BUSSubject.Instance.UpdateSubject(mahp, tenhp, sotc, loaiHP, maKhoa);
                         if (message == "")
                         {
-                            MessageBox.Show($"Cập Nhật Thông Tin Học Phần Có Mã {mahp} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MyMessageBox.Show($"Cập Nhật Thông Tin Học Phần Có Mã {mahp} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadAllHocPhan();
                             dataGridViewContent.Columns.RemoveAt(1);
 
                         }
                         else
                         {
-                            MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                         }
                     }
@@ -181,24 +181,24 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Học Phần Có Mã: {textBoxMaHp.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MyMessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Học Phần Có Mã: {textBoxMaHp.Text}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (BUSSubject.Instance.DeleteSubject(textBoxMaHp.Text) > 0)
                     {
-                        MessageBox.Show($"Xóa Thành Công Học Phần Có Mã: {textBoxMaHp.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Xóa Thành Công Học Phần Có Mã: {textBoxMaHp.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllHocPhan();
                         dataGridViewContent.Columns.RemoveAt(1);
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. Không Tồn Tại Học Phần Có Mã: {textBoxMaHp.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. Không Tồn Tại Học Phần Có Mã: {textBoxMaHp.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -228,7 +228,7 @@ namespace GUI
 
             if (string.IsNullOrEmpty(valueSearch))
             {
-                MessageBox.Show("Nhập Giá Trị Cần Tìm Kiếm");
+                MyMessageBox.Show("vui lòng nhập giá trị cần tìm kiếm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

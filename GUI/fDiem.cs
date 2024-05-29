@@ -102,7 +102,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -128,21 +128,21 @@ namespace GUI
                     string message = BUSScore.Instance.InsertScore(diemGHP, diemKTHP, maSV, maHocPhan);
                     if (message == "")
                     {
-                        MessageBox.Show($"Nhập Điểm Cho Sinh Viên {tenSinhVien} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Nhập Điểm Cho Sinh Viên {tenSinhVien} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSScore.Instance.GetAllScore(dataGridViewContent);
                         dataGridViewContent.Columns.RemoveAt(1);
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
             }
@@ -153,7 +153,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -178,14 +178,14 @@ namespace GUI
                     string message = BUSScore.Instance.UpdateScore(diemGHP, diemKTHP, maSV, maHocPhan);
                     if (message == "")
                     {
-                        MessageBox.Show($"Cập Nhật Điểm Cho Sinh Viên {tenSinhVien} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Cập Nhật Điểm Cho Sinh Viên {tenSinhVien} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BUSScore.Instance.GetAllScore(dataGridViewContent);
                         dataGridViewContent.Columns.RemoveAt(1);
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
 
@@ -193,7 +193,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
             }
@@ -203,7 +203,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -214,19 +214,19 @@ namespace GUI
                     tenSinhVien = comboBoxSinhVien.SelectedItem.ToString();
                 }
                 string maSV = BUSStudent.Instance.GetIDByName(tenSinhVien);
-                DialogResult result = MessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên: {tenSinhVien} Có Mã: {maSV}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MyMessageBox.Show($"Bạn Có Chắc Chắn Muốn Xóa Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên: {tenSinhVien} Có Mã: {maSV}", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (BUSScore.Instance.DeleteScore(GetSubjectIDByName(comboBoxMonHoc)) != 0)
                     {
-                        MessageBox.Show($"Xóa Thành Công Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên:  {tenSinhVien}  Có Mã:  {maSV}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MyMessageBox.Show($"Xóa Thành Công Điểm Môn Học: {comboBoxMonHoc.SelectedItem} Của Sinh Viên:  {tenSinhVien}  Có Mã:  {maSV}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllScore();
                         dataGridViewContent.Columns.RemoveAt(1);
 
                     }
                     else
                     {
-                        MessageBox.Show($"Thất Bại. Sinh Viên Chưa Có Điểm Môn Học Này.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show($"Thất Bại. Sinh Viên Chưa Có Điểm Môn Học Này.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
@@ -254,7 +254,7 @@ namespace GUI
             }
             if (string.IsNullOrEmpty(valueSearch))
             {
-                MessageBox.Show("Nhập Giá Trị Cần Tìm Kiếm");
+                MyMessageBox.Show("Nhập Giá Trị Cần Tìm Kiếm");
             }
             else
             {

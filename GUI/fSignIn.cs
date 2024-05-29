@@ -54,13 +54,13 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show($"Đăng Nhập Thất Bại! {message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MyMessageBox.Show($"Đăng Nhập Thất Bại! {message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
             else
             {
-                MessageBox.Show("Thông tin tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Hoặc Mật Khẩu Không Chính Xác", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
 
