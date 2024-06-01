@@ -50,6 +50,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.PictureBoxLogo = new GUI.UserControls.KDCircularPictureBox();
             this.labelUserName = new System.Windows.Forms.Label();
             this.labelPermission = new System.Windows.Forms.Label();
             this.flowLayoutPaneSideMenu = new System.Windows.Forms.FlowLayoutPanel();
@@ -65,7 +66,6 @@
             this.pictureBoxContent = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.PictureBoxLogo = new GUI.UserControls.KDCircularPictureBox();
             this.flowLayoutPanelHoSo.SuspendLayout();
             this.flowLayoutPanelQuanLy.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -74,11 +74,11 @@
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).BeginInit();
             this.flowLayoutPaneSideMenu.SuspendLayout();
             this.flowLayoutPanelHocTap.SuspendLayout();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanelHoSo
@@ -400,6 +400,23 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(117, 2);
             this.guna2GradientPanel1.TabIndex = 5;
             // 
+            // PictureBoxLogo
+            // 
+            this.PictureBoxLogo.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.PictureBoxLogo.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.PictureBoxLogo.BorderColor2 = System.Drawing.Color.HotPink;
+            this.PictureBoxLogo.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.PictureBoxLogo.BorderSize = 2;
+            this.PictureBoxLogo.GradientAngle = 50F;
+            this.PictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxLogo.Image")));
+            this.PictureBoxLogo.Location = new System.Drawing.Point(4, 13);
+            this.PictureBoxLogo.Name = "PictureBoxLogo";
+            this.PictureBoxLogo.Size = new System.Drawing.Size(55, 55);
+            this.PictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBoxLogo.TabIndex = 0;
+            this.PictureBoxLogo.TabStop = false;
+            this.PictureBoxLogo.Click += new System.EventHandler(this.kdCircularPictureBox1_Click);
+            // 
             // labelUserName
             // 
             this.labelUserName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -657,23 +674,6 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // PictureBoxLogo
-            // 
-            this.PictureBoxLogo.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.PictureBoxLogo.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.PictureBoxLogo.BorderColor2 = System.Drawing.Color.HotPink;
-            this.PictureBoxLogo.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.PictureBoxLogo.BorderSize = 2;
-            this.PictureBoxLogo.GradientAngle = 50F;
-            this.PictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxLogo.Image")));
-            this.PictureBoxLogo.Location = new System.Drawing.Point(4, 13);
-            this.PictureBoxLogo.Name = "PictureBoxLogo";
-            this.PictureBoxLogo.Size = new System.Drawing.Size(55, 55);
-            this.PictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBoxLogo.TabIndex = 0;
-            this.PictureBoxLogo.TabStop = false;
-            this.PictureBoxLogo.Click += new System.EventHandler(this.kdCircularPictureBox1_Click);
-            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -689,7 +689,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Sinh Viên Khoa CNTT";
+            this.Text = "Student Management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fHome_FormClosing);
             this.Load += new System.EventHandler(this.fHome_Load);
             this.flowLayoutPanelHoSo.ResumeLayout(false);
@@ -701,11 +701,11 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).EndInit();
             this.flowLayoutPaneSideMenu.ResumeLayout(false);
             this.flowLayoutPanelHocTap.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

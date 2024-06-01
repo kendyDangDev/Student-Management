@@ -78,8 +78,9 @@
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
+            this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelUsername.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.labelUsername.Location = new System.Drawing.Point(147, 84);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(99, 18);
@@ -89,8 +90,9 @@
             // labelPhoneNumber
             // 
             this.labelPhoneNumber.AutoSize = true;
+            this.labelPhoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.labelPhoneNumber.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhoneNumber.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelPhoneNumber.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.labelPhoneNumber.Location = new System.Drawing.Point(146, 182);
             this.labelPhoneNumber.Name = "labelPhoneNumber";
             this.labelPhoneNumber.Size = new System.Drawing.Size(129, 18);
@@ -123,8 +125,9 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
+            this.labelEmail.BackColor = System.Drawing.Color.Transparent;
             this.labelEmail.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.labelEmail.Location = new System.Drawing.Point(146, 282);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(124, 18);
@@ -157,7 +160,7 @@
             // fForgotPassword
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(612, 591);
             this.Controls.Add(this.TextBoxEmail);
             this.Controls.Add(this.labelEmail);
@@ -167,7 +170,8 @@
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.buttonSubmit);
             this.Name = "fForgotPassword";
-            this.Text = "Forgot Password";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quên Mật Khẩu";
             this.Load += new System.EventHandler(this.fForgotPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

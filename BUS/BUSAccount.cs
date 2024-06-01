@@ -63,8 +63,8 @@ namespace BUS
             }
         }
 
-  
- 
+
+
         public string GetPassword(string username, string phonenumber, string email)
         {
             string Password = null;
@@ -74,7 +74,7 @@ namespace BUS
                 Password = row[0].ToString();
 
             }
-        
+
             if (DALAccount.Instance.CheckEmail(username, email).Rows.Count <= 0)
             {
                 return "";
@@ -130,6 +130,7 @@ namespace BUS
             {
                 return "Không thể xóa tài khoản quản trị";
             }
+
             if (DALAccount.Instance.GetAccountByUserName(username).Rows.Count != 0)
             {
                 DALAccount.Instance.DeleteAccount(username);
@@ -139,6 +140,8 @@ namespace BUS
             {
                 return $"UserName: {username} Không Tồn Tại";
             }
+
+
         }
 
         public string CheckAccountType(string username)

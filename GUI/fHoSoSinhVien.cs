@@ -91,7 +91,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -316,7 +316,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -350,7 +350,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else

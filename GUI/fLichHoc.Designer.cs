@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.labelTotalPages = new System.Windows.Forms.Label();
             this.labelCurrentPage = new System.Windows.Forms.Label();
@@ -174,20 +174,21 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(172, 273);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(190, 270);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 21);
+            this.label7.Size = new System.Drawing.Size(58, 27);
             this.label7.TabIndex = 7;
             this.label7.Text = "Lớp:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(549, 276);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(549, 272);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 21);
+            this.label6.Size = new System.Drawing.Size(112, 27);
             this.label6.TabIndex = 7;
             this.label6.Text = "Tuần Học:";
             // 
@@ -209,7 +210,7 @@
             this.groupBoxNganh.Controls.Add(this.label4);
             this.groupBoxNganh.Controls.Add(this.label1);
             this.groupBoxNganh.Controls.Add(this.labelMaNganh);
-            this.groupBoxNganh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxNganh.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxNganh.Location = new System.Drawing.Point(59, 20);
             this.groupBoxNganh.Name = "groupBoxNganh";
             this.groupBoxNganh.Size = new System.Drawing.Size(909, 227);
@@ -220,9 +221,10 @@
             // labelKhoa
             // 
             this.labelKhoa.AutoSize = true;
+            this.labelKhoa.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelKhoa.Location = new System.Drawing.Point(486, 128);
             this.labelKhoa.Name = "labelKhoa";
-            this.labelKhoa.Size = new System.Drawing.Size(88, 19);
+            this.labelKhoa.Size = new System.Drawing.Size(122, 23);
             this.labelKhoa.TabIndex = 2;
             this.labelKhoa.Text = "Tiết Bắt Đầu:";
             this.labelKhoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -349,9 +351,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(127, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 19);
+            this.label3.Size = new System.Drawing.Size(49, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Lớp:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -359,9 +362,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(86, 128);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 19);
+            this.label5.Size = new System.Drawing.Size(110, 23);
             this.label5.TabIndex = 2;
             this.label5.Text = "Giảng Viên:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -369,9 +373,10 @@
             // labelTenNganh
             // 
             this.labelTenNganh.AutoSize = true;
+            this.labelTenNganh.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTenNganh.Location = new System.Drawing.Point(500, 80);
             this.labelTenNganh.Name = "labelTenNganh";
-            this.labelTenNganh.Size = new System.Drawing.Size(71, 19);
+            this.labelTenNganh.Size = new System.Drawing.Size(97, 23);
             this.labelTenNganh.TabIndex = 2;
             this.labelTenNganh.Text = "Tuần Học:";
             this.labelTenNganh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,9 +384,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(84, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 19);
+            this.label2.Size = new System.Drawing.Size(109, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Phòng Học:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -389,9 +395,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(92, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 19);
+            this.label4.Size = new System.Drawing.Size(97, 23);
             this.label4.TabIndex = 2;
             this.label4.Text = "Học Phần:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -399,9 +406,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(486, 176);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 19);
+            this.label1.Size = new System.Drawing.Size(115, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Số Tiết Học:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -409,9 +417,10 @@
             // labelMaNganh
             // 
             this.labelMaNganh.AutoSize = true;
+            this.labelMaNganh.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMaNganh.Location = new System.Drawing.Point(534, 35);
             this.labelMaNganh.Name = "labelMaNganh";
-            this.labelMaNganh.Size = new System.Drawing.Size(37, 19);
+            this.labelMaNganh.Size = new System.Drawing.Size(49, 23);
             this.labelMaNganh.TabIndex = 2;
             this.labelMaNganh.Text = "Thứ:";
             this.labelMaNganh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -512,26 +521,26 @@
             // 
             // dataGridViewContent
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.dataGridViewContent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewContent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.dataGridViewContent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewContent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewContent.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewContent.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewContent.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewContent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
             this.dataGridViewContent.Location = new System.Drawing.Point(0, 325);

@@ -128,6 +128,14 @@ namespace BUS
         {
             datagird.DataSource = DALScore.Instance.SortASC();
         }
+        public void SortDESC(DataGridView datagird, string maSV)
+        {
+            datagird.DataSource = DALScore.Instance.SortDESC(maSV);
+        }
+        public void SortASC(DataGridView datagird, string maSV)
+        {
+            datagird.DataSource = DALScore.Instance.SortASC(maSV);
+        }
 
         public void GetScoreBymaSV(DataGridView datagird, string maSV)
         {

@@ -441,11 +441,6 @@ namespace GUI
         }
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            
-            
             Form latestForm = FormHelper.GetLatestOpenedForm();
             string currentForm = latestForm.Name;
             string title;
@@ -474,9 +469,6 @@ namespace GUI
                     title = "DANH SÁCH KHOA TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";
                     ExportExcel((DataTable)fKhoa.Instance.dataGridViewContent.DataSource, title);
 
-                    break;
-                case "fLichHoc":
-                    title = "LỊCH HỌC";
                     break;
                 case "fLopHoc":
                     title = "DANH SÁCH LỚP HỌC TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT HƯNG YÊN";

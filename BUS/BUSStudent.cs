@@ -88,9 +88,9 @@ namespace BUS
             {
                 return "Địa Chỉ Email Không Hợp Lệ";
             }
-            if (DateTime.Now.Year - ngaysinh.Year < 18)
+            if (DateTime.Now.Year - ngaysinh.Year < 18 || DateTime.Now.Year - ngaysinh.Year > 124)
             {
-                return "Ngày Sinh Không Hợp Lệ. Chưa Đủ 18 Tuổi";
+                return "Ngày Sinh Không Hợp Lệ.";
             }
 
             if (DALStudent.Instance.GetStudentByID(masv).Rows.Count == 0)
@@ -156,9 +156,9 @@ namespace BUS
             {
                 return "Địa Chỉ Email Không Hợp Lệ";
             }
-            if (DateTime.Now.Year - ngaysinh.Year < 18)
+            if (DateTime.Now.Year - ngaysinh.Year < 18 || DateTime.Now.Year - ngaysinh.Year > 100)
             {
-                return "Ngày Sinh Không Hợp Lệ. Chưa Đủ 18 Tuổi";
+                return "Ngày Sinh Không Hợp Lệ";
             }
 
             if (!(DALStudent.Instance.GetStudentByID(masv).Rows.Count == 0))

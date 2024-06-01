@@ -57,6 +57,7 @@ namespace GUI
                     string message = BUSAccount.Instance.CheckAccountType(username);
                     if (message == "")
                     {
+                        MyMessageBox.Show("Đăng Nhập Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoggedInUsername = username;
                         BUSAccount.Instance.UpdateLoginLog(username);
                         accountType = BUSAccount.Instance.GetAccountTypeLogin(username);

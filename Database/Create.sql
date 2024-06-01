@@ -1181,14 +1181,13 @@ select * from thoikhoabieu
 
 --trigger update số lượng sinh viên của lớp
 go
-CREATE OR ALTER TRIGGER UpdateSISO
+ALTER TRIGGER UpdateSISO
 ON SINHVIEN
 AFTER INSERT, DELETE
 AS
 BEGIN
     SET NOCOUNT ON;
-    
-    -- Cập nhật cột SISO trong bảng LOPHOC
+
     UPDATE LOPHOC
     SET SISO = (
         SELECT COUNT(*)
@@ -1199,7 +1198,9 @@ BEGIN
     INNER JOIN INSERTED ON LOPHOC.MALOP = INSERTED.MALOP;
 END;
 GO
-
+-- select * from lophoc
+-- select * from SinhVien where malop = 'w.4'
+select * from lophoc
 --thông tin sinh viên
 ALTER proc USP_ThongTinSinhVien
 AS
@@ -1217,7 +1218,9 @@ END
 GO
 
 --thêm sinh viên mới
-sp_helptext UPDATEsiso
+
+
+
 SELECT * FROM SINHVIEN
 SELECT * FROM LOPHOC
 GO
@@ -2162,3 +2165,32 @@ BEGIN
 END
 
 USP_GetLectureBySubject [Toán Cao Cấp]
+
+select * from sinhvien where malop = 'w.1'
+
+select * from SinhVien
+GO
+
+
+sp_helptext USP_ThongTinSinhVien
+
+select * from LOPHOC
+select * from SinhVien where malop = 'w.1'
+
+select * from LOPHOC
+
+
+sp_helptext USP_UpdateLoginLog
+go
+alter proc USP_UpdateLoginLog( 
+    @Username nvarchar(50) 
+) 
+As 
+BEGIN 
+ 
+    update TAIKHOAN 
+    set LOGINLOG = DATEADD(HOUR, 7, GETDATE())
+    where Username = @Username 
+END
+
+select * from TAIKHOAN

@@ -125,7 +125,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -298,7 +298,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -327,7 +327,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -452,6 +452,11 @@ namespace GUI
                 dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightSkyBlue;
 
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,7 +44,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                BUSAccount.Instance.GetAccountByUsername(dataGridViewContent,username);
+                BUSAccount.Instance.GetAccountByUsername(dataGridViewContent, username);
             }
             else
             {
@@ -68,20 +68,20 @@ namespace GUI
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
-              
+
         }
 
 
         private void dataGridViewContent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void ButtonUpdate_Click(object sender, EventArgs e)
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -99,22 +99,25 @@ namespace GUI
                 }
                 else
                 {
-                    if(username.ToLower() != "admin")
+                    if (username.ToLower() != "admin")
                     {
-                        MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này???.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này???.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    }
-                    string message = BUSAccount.Instance.GrantPermission(usernameTK, accountType);
-                    if (message == "")
-                    {
-                        MyMessageBox.Show($"Cập Quyền Cho Tài Khoản: {usernameTK} Với Quyền: {accountType} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadAllAccount();
-                        dataGridViewContent.Columns.RemoveAt(1);
                     }
                     else
                     {
-                        MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        string message = BUSAccount.Instance.GrantPermission(usernameTK, accountType);
+                        if (message == "")
+                        {
+                            MyMessageBox.Show($"Cập Quyền Cho Tài Khoản: {usernameTK} Với Quyền: {accountType} Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadAllAccount();
+                            dataGridViewContent.Columns.RemoveAt(1);
+                        }
+                        else
+                        {
+                            MyMessageBox.Show($"Thất Bại. {message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                        }
                     }
                 }
             }
@@ -124,7 +127,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -137,6 +140,8 @@ namespace GUI
                     {
                         MyMessageBox.Show($"Xóa Thành Công Username: {textBoxUsername.Text}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllAccount();
+                        dataGridViewContent.Columns.RemoveAt(1);
+
                     }
                     else
                     {
@@ -150,7 +155,7 @@ namespace GUI
 
         private void dataGridViewContent_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex != -1)
+            if (e.RowIndex != -1)
             {
                 textBoxUsername.Text = dataGridViewContent.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textBoxSDT.Text = dataGridViewContent.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -171,7 +176,7 @@ namespace GUI
 
         private void dataGridViewContent_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-         
+
             if (e.RowIndex >= 0)
             {
                 color = dataGridViewContent.Rows[e.RowIndex].DefaultCellStyle.BackColor;

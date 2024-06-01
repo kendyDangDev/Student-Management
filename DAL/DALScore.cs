@@ -96,6 +96,17 @@ namespace DAL
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable SortASC(string maSV)
+        {
+            string query = "select * from v_SearchByMonHoc where [Mã SV] = @masv order by [Điểm TBC]";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] {maSV});
+        }
+        public DataTable SortDESC(string maSV)
+        {
+            string query = "select * from v_SearchByMonHoc where [Mã SV] = @maSV order by [Điểm TBC] DESC";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] {maSV});
+        }
+
 
 
         //public void 

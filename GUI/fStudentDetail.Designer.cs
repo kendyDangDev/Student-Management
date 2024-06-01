@@ -81,11 +81,11 @@
             this.TimePickerBirthdayNT = new GUI.UserControls.KDDateTimePicker();
             this.TimePickerBirthday = new GUI.UserControls.KDDateTimePicker();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.comboBoxLop = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.textBoxMaSV = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.textBoxHoTen = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -774,6 +774,14 @@
             this.guna2GradientPanel4.Size = new System.Drawing.Size(301, 102);
             this.guna2GradientPanel4.TabIndex = 9;
             // 
+            // guna2Panel15
+            // 
+            this.guna2Panel15.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel15.Location = new System.Drawing.Point(111, 62);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.Size = new System.Drawing.Size(3, 25);
+            this.guna2Panel15.TabIndex = 11;
+            // 
             // comboBoxLop
             // 
             this.comboBoxLop.BackColor = System.Drawing.Color.Transparent;
@@ -811,14 +819,6 @@
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Size = new System.Drawing.Size(1, 30);
             this.guna2Panel10.TabIndex = 10;
-            // 
-            // guna2Panel15
-            // 
-            this.guna2Panel15.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel15.Location = new System.Drawing.Point(111, 62);
-            this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(3, 25);
-            this.guna2Panel15.TabIndex = 11;
             // 
             // StudentDetail
             // 
@@ -886,7 +886,6 @@
             this.Name = "StudentDetail";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "       g";
             this.Load += new System.EventHandler(this.StudentDetail_Load);
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel4.PerformLayout();

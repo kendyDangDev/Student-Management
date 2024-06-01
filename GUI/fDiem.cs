@@ -58,6 +58,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
+                ButtonSearch.Enabled = false;
                 BUSScore.Instance.GetScoreBymaSV(dataGridViewContent, username);
             }
             else
@@ -102,7 +103,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -153,7 +154,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -203,7 +204,7 @@ namespace GUI
         {
             if (type.ToLower() == "user")
             {
-                MyMessageBox.Show("Tài Khoản Cùa Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.Show("Tài Khoản Của Bạn Không Thể Sử Dụng Chức Năng Này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -295,11 +296,26 @@ namespace GUI
                 switch (SortType)
                 {
                     case "Giảm Dần":
-                        BUSScore.Instance.SortDESC(dataGridViewContent);
+                        if (type.ToLower() == "user")
+                        {
+                            BUSScore.Instance.SortDESC(dataGridViewContent,username);
+                        }
+                        else
+                        {
+                            BUSScore.Instance.SortDESC(dataGridViewContent);
+                        }
                         break;
                     case "Tăng Dần":
-                        BUSScore.Instance.SortASC(dataGridViewContent);
+                        if (type.ToLower() == "user")
+                        {
+                            BUSScore.Instance.SortASC(dataGridViewContent, username);
+                        }
+                        else
+                        {
+                            BUSScore.Instance.SortASC(dataGridViewContent);
+                        }
                         break;
+
                 }
             }
             dataGridViewContent.Columns.RemoveAt(1);
@@ -316,8 +332,8 @@ namespace GUI
         {
             if (e.RowIndex != -1)
             {
-                comboBoxSinhVien.Text = dataGridViewContent.Rows[e.RowIndex].Cells[2].Value.ToString();
                 comboBoxLop.Text = dataGridViewContent.Rows[e.RowIndex].Cells[4].Value.ToString();
+                comboBoxSinhVien.Text = dataGridViewContent.Rows[e.RowIndex].Cells[2].Value.ToString();
                 comboBoxMonHoc.Text = dataGridViewContent.Rows[e.RowIndex].Cells[5].Value.ToString();
                 textBoxGHP.Text = dataGridViewContent.Rows[e.RowIndex].Cells[6].Value.ToString();
                 textBoxKTHP.Text = dataGridViewContent.Rows[e.RowIndex].Cells[7].Value.ToString();

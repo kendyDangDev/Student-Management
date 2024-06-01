@@ -90,7 +90,7 @@ namespace DAL
         }
         public DataTable GetAccountType(string username)
         {
-            string query = "select accounttype from taikhoan where username = @username and (accounttype = 'admin' or accounttype = 'User')";
+            string query = "select accounttype from taikhoan where username = @username and (accounttype = 'admin' or accounttype = 'user')";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { username });
         }
 
